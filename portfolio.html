@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio | Spencer Dewbury</title>
+  <style>
+    :root {
+      --bg: #f5f0e6;
+      --text: #3e352e;
+      --accent: #a37b52;
+      --header-footer: #5a4636;
+      --font-sans: 'Lato', sans-serif;
+      --font-serif: Georgia, serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background: var(--header-footer);
+      padding: 1rem 2rem;
+      color: var(--bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      color: var(--bg);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      margin-top: 2rem;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.3rem;
+    }
+
+    .project {
+      margin-bottom: 1.5rem;
+    }
+
+    .project h3 {
+      margin: 0 0 0.3rem;
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+    }
+
+    .project a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    .project .meta {
+      font-size: 0.9rem;
+      color: #6c5b4b;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      background: var(--header-footer);
+      color: var(--bg);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><strong>Spencer Dewbury</strong></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Portfolio</h1>
+
+    <h2>Music & Culture (Rap)</h2>
+    <div class="project">
+      <h3><a href="https://undergroundunderdogs.com/author/spencerdewbury/" target="_blank">Pieces for Underground Underdogs</a></h3>
+      <div class="meta">Underground Underdogs — Rap & music journalism</div>
+      <p>A collection of interviews, reviews, and features exploring the rap scene's underground voices and cultural impact.</p>
+    </div>
+
+    <h2>Local News & Community</h2>
+    <div class="project">
+      <h3><a href="https://www.bethelgrapevine.com/authors/spencer-dewbury" target="_blank">Articles for Bethel Grapevine</a></h3>
+      <div class="meta">Bethel Grapevine — Hyperlocal news coverage</div>
+      <p>Covers community events, local stories, and important news in the Bethel region with grounded reporting and storytelling.</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Spencer Dewbury — All rights reserved.
+  </footer>
+
+</body>
+</html>
