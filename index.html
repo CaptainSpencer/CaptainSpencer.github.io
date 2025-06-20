@@ -46,22 +46,8 @@
     .hero {
       text-align: center;
       padding: 6rem 2rem 4rem;
-      background: url('banner.jpg') center/cover no-repeat;
+      background-color: #333; /* fallback background */
       color: #fff;
-      position: relative;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-    }
-
-    .hero-content {
-      position: relative;
-      max-width: 700px;
-      margin: 0 auto;
       font-family: var(--font-serif);
     }
 
@@ -73,6 +59,8 @@
     .hero p {
       font-size: 1.2rem;
       line-height: 1.5;
+      max-width: 700px;
+      margin: 1rem auto 0;
     }
 
     .features {
@@ -112,6 +100,7 @@
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
+      margin-top: 4rem;
     }
   </style>
 </head>
@@ -128,10 +117,8 @@
   </header>
 
   <section class="hero">
-    <div class="hero-content">
-      <h1>Music • News • Celebrity Interviews</h1>
-      <p>I'm Spencer Dewbury: Published journalist with a pulse on music journalism, news coverage, and conversations with the voices shaping culture.</p>
-    </div>
+    <h1>Music • News • Celebrity Interviews</h1>
+    <p>I'm Spencer Dewbury: Published journalist with a pulse on music journalism, news coverage, and conversations with the voices shaping culture.</p>
   </section>
 
   <div class="features">
