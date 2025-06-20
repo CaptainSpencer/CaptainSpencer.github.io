@@ -1,1 +1,1 @@
-# captainspencer.github.io
+# CaptainSpencer.github.io
