@@ -6,9 +6,11 @@
   <title>Spencer Dewbury | Music & News Journalist</title>
   <style>
     :root {
-      --dark: #1a1a1a;
-      --light: #f9f9f9;
-      --gold: #c4a76c;
+      --bg: #f5f0e6;
+      --text: #3e352e;
+      --accent: #a37b52;
+      --accent-hover: #8d6744;
+      --header-footer: #5a4636;
       --font-sans: 'Lato', sans-serif;
       --font-serif: Georgia, serif;
     }
@@ -16,14 +18,14 @@
     body {
       margin: 0;
       font-family: var(--font-sans);
-      background: var(--light);
-      color: var(--dark);
+      background: var(--bg);
+      color: var(--text);
     }
 
     header {
-      background: var(--dark);
+      background: var(--header-footer);
       padding: 1rem 2rem;
-      color: var(--light);
+      color: var(--bg);
       position: sticky;
       top: 0;
       display: flex;
@@ -34,20 +36,19 @@
 
     nav a {
       margin-left: 1.5rem;
-      color: var(--light);
+      color: var(--bg);
       text-decoration: none;
       font-weight: 500;
     }
 
     nav a:hover {
-      color: var(--gold);
+      color: var(--accent);
     }
 
     .hero {
       text-align: center;
       padding: 6rem 2rem 4rem;
-      background-color: #333; /* fallback background */
-      color: #fff;
+      background-color: #eae4d8;
       font-family: var(--font-serif);
     }
 
@@ -76,17 +77,18 @@
       display: block;
       padding: 1.5rem;
       background: #fff;
-      border: 1px solid #ddd;
+      border: 1px solid #d6cfc6;
       text-align: center;
       text-decoration: none;
-      color: var(--dark);
-      border-top: 3px solid var(--gold);
-      transition: transform 0.2s ease;
+      color: var(--text);
+      border-top: 3px solid var(--accent);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .features a:hover {
       transform: translateY(-4px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      border-top-color: var(--accent-hover);
     }
 
     .features h3 {
@@ -95,8 +97,8 @@
     }
 
     footer {
-      background: var(--dark);
-      color: var(--light);
+      background: var(--header-footer);
+      color: var(--bg);
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
