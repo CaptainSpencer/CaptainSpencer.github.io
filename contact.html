@@ -1,133 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title id="page-title">Contact | Spencer Dewbury</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #f5f0e6;
-      --text: #3e352e;
-      --accent: #a37b52;
-      --header-footer: #5a4636;
-      --font-sans: 'Lato', sans-serif;
-      --font-serif: Georgia, serif;
-      --font-pixel: 'Press Start 2P', cursive;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spencer Dewbury | Home</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Lato&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset and Body Setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* Ensure existing PNGs maintain pixelated look when scaled */
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
 
-    body {
-      margin: 0;
-      font-family: var(--font-sans);
-      background: var(--bg) url('https://www.transparenttextures.com/patterns/stardust.png');
-      color: var(--text);
-      background-color: #0d1b2a;
-      background-size: 200px 200px;
-      background-attachment: fixed;
-      overflow-x: hidden;
-    }
+        body {
+            background-color: #0d1b2a;
+            background-image: url('pixel_banner.png'), url('https://www.transparenttextures.com/patterns/stardust.png');
+            background-size: cover, 200px 200px;
+            background-repeat: no-repeat, repeat;
+            background-attachment: fixed;
+            font-family: 'Lato', sans-serif;
+            color: #f5f0e6;
 
-    header {
-      background: var(--header-footer);
-      padding: 1.5rem 2rem;
-      color: var(--bg);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: var(--font-pixel);
-      font-size: 0.9rem;
-      letter-spacing: 1px;
-    }
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Start content from the top */
+            align-items: center;
+            min-height: 100vh;
+            padding: 0; /* REMOVED ALL PADDING FROM BODY */
+        }
 
-    nav a {
-      margin-left: 1.5rem;
-      color: var(--bg);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s ease, transform 0.2s ease;
-    }
+        /* Main Content Area */
+        .content {
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+            /* REMOVED ALL PADDING FROM CONTENT */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-grow: 0;
+            /* NO MARGIN BOTTOM HERE, will control through specific elements */
+        }
 
-    nav a:hover {
-      color: var(--accent);
-      transform: scale(1.1);
-    }
+        /* Your Existing Title PNG */
+        .main-title-img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin-bottom: -60px; /* INCREASED NEGATIVE MARGIN even more */
+            position: relative;
+            z-index: 1;
+        }
 
-    .container {
-      max-width: 600px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-      animation: fadeIn 2s ease-in;
-    }
+        /* New Subtitle Text Styling */
+        .new-subheader-text {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1rem;
+            color: #F8E2B2;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+            margin-top: 0px; /* Absolutely no top margin */
+            margin-bottom: 0px; /* Absolutely no bottom margin */
+            position: relative;
+            z-index: 2;
+        }
 
-    h1 {
-      font-family: var(--font-serif);
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #ffffff;
-      text-shadow: 1px 1px 2px #000;
-    }
+        /* Bio Text Styling */
+        .bio-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #F8E2B2;
+            max-width: 700px;
+            padding: 0 10px; /* Keep horizontal padding for text readability */
+            margin-bottom: 0px; /* Absolutely no bottom margin */
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+        }
 
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #eaeaea;
-    }
+        /* Button Containers */
+        .buttons-stack {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px; /* Absolutely no vertical gap between button rows */
+            margin-top: 0; /* Absolutely no top margin */
+            margin-bottom: 20px; /* Still some space from footer */
+        }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+        .main-button-row,
+        .sub-button-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px; /* Slightly tighter horizontal space for buttons */
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
+        /* Styling for your Button PNGs */
+        .button-img {
+            width: auto;
+            height: 350px; /* Consistent huge size */
+            max-width: 800px;
+            transition: transform 0.1s ease-out;
+        }
 
-    footer {
-      background: var(--header-footer);
-      color: var(--bg);
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      margin-top: 4rem;
-    }
+        .button-img:hover {
+            transform: translateY(-10px);
+        }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
-  <script>
-    // Animate page title like Terraria blinking effect
-    const titleFrames = ["Contact | Spencer Dewbury", "Contact ✨ Spencer Dewbury"];
-    let current = 0;
-    setInterval(() => {
-      document.title = titleFrames[current % titleFrames.length];
-      current++;
-    }, 1000);
-  </script>
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            font-family: 'Press Start 2P', cursive;
+            color: #aaa;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        /* Sparkle Animations (retained) */
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, #f2d18c 0%, #a37b52 60%, transparent 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 6px #a37b52aa;
+            animation: sparkle 5s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes sparkle {
+            0% { opacity: 0.1; transform: translateY(0) scale(1); }
+            50% { opacity: 1; transform: translateY(-20px) scale(1.3); }
+            100% { opacity: 0.1; transform: translateY(0) scale(1); }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .main-title-img {
+                max-width: 90%;
+                margin-bottom: -40px; /* Increased negative margin for mobile logo/subheader overlap */
+            }
+            .new-subheader-text {
+                font-size: 0.8rem;
+                margin-bottom: 0px;
+            }
+            .bio-text {
+                font-size: 0.85rem;
+                max-width: 90%;
+                margin-bottom: 0px;
+            }
+            .buttons-stack {
+                gap: 0px;
+                margin-bottom: 15px;
+            }
+            .main-button-row,
+            .sub-button-row {
+                gap: 10px;
+            }
+            .button-img {
+                height: 250px;
+                max-width: 95%;
+            }
+        }
+    </style>
+    <script>
+        const titleFrames = ["Spencer Dewbury | Home", "✨ Spencer Dewbury ✨"];
+        let current = 0;
+        setInterval(() => {
+            document.title = titleFrames[current % titleFrames.length];
+            current++;
+        }, 1000);
+    </script>
 </head>
 <body>
+    <div class="sparkle" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
+    <div class="sparkle" style="top: 30%; left: 60%; animation-delay: 1.5s;"></div>
+    <div class="sparkle" style="top: 50%; left: 25%; animation-delay: 2.8s;"></div>
+    <div class="sparkle" style="top: 70%; left: 80%; animation-delay: 3.2s;"></div>
+    <div class="sparkle" style="top: 85%; left: 40%; animation-delay: 4.5s;"></div>
 
-  <header>
-    <div><strong>Spencer Dewbury</strong></div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    <main class="content">
+        <img class="main-title-img" src="spencer_dewbury_title_transparent.png" alt="Spencer Dewbury">
+        <p class="new-subheader-text">Music Journalist. News. Celebrity Interviews.</p>
+        <p class="bio-text">
+            I'm Spencer Dewbury: Published journalist with a pulse on music journalism, local news coverage, and conversations with the voices shaping culture.
+        </p>
+        <div class="buttons-stack">
+            <div class="main-button-row">
+                <a href="portfolio.html">
+                    <img src="explore_button.png" alt="Explore My Work" class="button-img" />
+                </a>
+            </div>
+            <div class="sub-button-row">
+                <a href="about.html">
+                    <img src="about_button.png" alt="About Me" class="button-img" />
+                </a>
+                <a href="contact.html">
+                    <img src="contact_button.png" alt="Contact" class="button-img" />
+                </a>
+            </div>
+        </div>
+    </main>
 
-  <div class="container">
-    <h1>Contact</h1>
-    <p>Interested in working together, setting up an interview, or just want to say hi?</p>
-    <p>📧 <a href="mailto:dewburyspencer@gmail.com">dewburyspencer@gmail.com</a></p>
-  </div>
-
-  <footer>
-    &copy; 2025 Spencer Dewbury — All rights reserved.
-  </footer>
-
+    <footer>
+        &copy; 2025 Spencer Dewbury — All rights reserved.
+    </footer>
 </body>
 </html>
