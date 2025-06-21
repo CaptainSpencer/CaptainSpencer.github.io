@@ -44,7 +44,6 @@
             flex-direction: column;
             align-items: center;
             flex-grow: 0;
-            /* No margin or padding here to allow children to be controlled */
         }
 
         /* Your Existing Title PNG */
@@ -52,8 +51,7 @@
             width: 100%;
             max-width: 500px;
             height: auto;
-            /* We're going to use transform on content-below-logo instead */
-            margin-bottom: 0; /* Set to 0 as other element will handle overlap */
+            margin-bottom: 0;
             position: relative;
             z-index: 1;
         }
@@ -64,8 +62,8 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
-            transform: translateY(-80px); /* AGGRESSIVE UPWARD SHIFT! Adjust this value! */
-            z-index: 2; /* Ensure it's above the logo */
+            transform: translateY(-100px); /* INCREASED AGGRESSIVE UPWARD SHIFT - Fixed value for you */
+            z-index: 2;
         }
 
         /* New Subtitle Text Styling */
@@ -74,7 +72,7 @@
             font-size: 1rem;
             color: #F8E2B2;
             text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
-            margin: 0; /* Zero out all margins */
+            margin: 0;
         }
 
         /* Bio Text Styling */
@@ -83,9 +81,9 @@
             line-height: 1.6;
             color: #F8E2B2;
             max-width: 700px;
-            padding: 0 10px; /* Keep horizontal padding for readability */
-            margin-top: 5px; /* Small margin from subheader */
-            margin-bottom: 0; /* Zero out bottom margin */
+            padding: 0 10px;
+            margin-top: 5px;
+            margin-bottom: 0;
             text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
         }
 
@@ -94,9 +92,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0px; /* Zero vertical gap between button rows */
-            margin-top: 0; /* Zero top margin from bio */
-            margin-bottom: 20px; /* Space from footer */
+            gap: 0px;
+            margin-top: 0;
+            margin-bottom: 20px;
         }
 
         .main-button-row,
@@ -104,13 +102,13 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px; /* Horizontal space for buttons */
+            gap: 15px;
         }
 
         /* Styling for your Button PNGs */
         .button-img {
             width: auto;
-            height: 350px; /* Consistent huge size */
+            height: 350px;
             max-width: 800px;
             transition: transform 0.1s ease-out;
         }
@@ -127,8 +125,7 @@
             color: #aaa;
             padding: 10px 0;
             width: 100%;
-            /* Ensure footer is not too close due to transform */
-            margin-top: -60px; /* Counter-act the transform to keep footer in place, adjust this if footer overlaps buttons */
+            margin-top: -80px; /* INCREASED negative margin to pull footer up as content shifts */
         }
 
         /* Sparkle Animations (retained) */
@@ -152,7 +149,7 @@
         /* Responsive Adjustments */
         @media (max-width: 768px) {
             .content-below-logo {
-                transform: translateY(-50px); /* Adjust transform for mobile */
+                transform: translateY(-60px); /* INCREASED negative transform for mobile */
             }
             .main-title-img {
                 max-width: 90%;
@@ -180,7 +177,7 @@
                 max-width: 95%;
             }
             footer {
-                margin-top: -30px; /* Adjust footer counter-transform for mobile */
+                margin-top: -40px; /* Adjusted footer counter-transform for mobile */
             }
         }
     </style>
@@ -219,8 +216,7 @@
                     </a>
                     <a href="contact.html">
                         <img src="contact_button.png" alt="Contact" class="button-img" />
-                    </a>
-                </div>
+                </a>
             </div>
         </div>
     </main>
