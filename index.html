@@ -7,7 +7,6 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Lato&display=swap" rel="stylesheet">
     <style>
-        /* General Reset and Body Setup */
         * {
             margin: 0;
             padding: 0;
@@ -25,7 +24,6 @@
             background-attachment: fixed;
             font-family: 'Lato', sans-serif;
             color: #f5f0e6;
-
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -34,19 +32,15 @@
             padding: 0;
         }
 
-        /* Main Content Area */
         .content {
             max-width: 800px;
             width: 90%;
             text-align: center;
-            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             align-items: center;
-            flex-grow: 0;
         }
 
-        /* Your Existing Title PNG */
         .main-title-img {
             width: 100%;
             max-width: 500px;
@@ -56,38 +50,35 @@
             z-index: 1;
         }
 
-        /* NEW CONTAINER for text and buttons */
         .content-below-logo {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
-            transform: translateY(-100px); /* INCREASED AGGRESSIVE UPWARD SHIFT - Fixed value for you */
+            margin-top: -40px;
             z-index: 2;
         }
 
-        /* New Subtitle Text Styling */
         .new-subheader-text {
             font-family: 'Press Start 2P', cursive;
             font-size: 1rem;
             color: #F8E2B2;
             text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
             margin: 0;
+            margin-bottom: 10px;
         }
 
-        /* Bio Text Styling */
         .bio-text {
             font-size: 0.95rem;
             line-height: 1.6;
             color: #F8E2B2;
             max-width: 700px;
             padding: 0 10px;
-            margin-top: 5px;
-            margin-bottom: 0;
+            margin-top: 0;
+            margin-bottom: 20px;
             text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
         }
 
-        /* Button Containers */
         .buttons-stack {
             display: flex;
             flex-direction: column;
@@ -105,10 +96,9 @@
             gap: 15px;
         }
 
-        /* Styling for your Button PNGs */
         .button-img {
             width: auto;
-            height: 350px;
+            height: 250px;
             max-width: 800px;
             transition: transform 0.1s ease-out;
         }
@@ -117,7 +107,6 @@
             transform: translateY(-10px);
         }
 
-        /* Footer Styling */
         footer {
             text-align: center;
             font-size: 0.7rem;
@@ -125,10 +114,9 @@
             color: #aaa;
             padding: 10px 0;
             width: 100%;
-            margin-top: -80px; /* INCREASED negative margin to pull footer up as content shifts */
+            margin-top: -80px;
         }
 
-        /* Sparkle Animations (retained) */
         .sparkle {
             position: absolute;
             width: 10px;
@@ -146,38 +134,44 @@
             100% { opacity: 0.1; transform: translateY(0) scale(1); }
         }
 
-        /* Responsive Adjustments */
         @media (max-width: 768px) {
             .content-below-logo {
-                transform: translateY(-60px); /* INCREASED negative transform for mobile */
+                margin-top: -20px;
             }
+
             .main-title-img {
                 max-width: 90%;
                 margin-bottom: 0;
             }
+
             .new-subheader-text {
                 font-size: 0.8rem;
-                margin-bottom: 0px;
+                margin-bottom: 8px;
             }
+
             .bio-text {
                 font-size: 0.85rem;
                 max-width: 90%;
-                margin-bottom: 0px;
+                margin-bottom: 15px;
             }
+
             .buttons-stack {
                 gap: 0px;
                 margin-bottom: 15px;
             }
+
             .main-button-row,
             .sub-button-row {
                 gap: 10px;
             }
+
             .button-img {
-                height: 250px;
+                height: 200px;
                 max-width: 95%;
             }
+
             footer {
-                margin-top: -40px; /* Adjusted footer counter-transform for mobile */
+                margin-top: -40px;
             }
         }
     </style>
@@ -216,7 +210,8 @@
                     </a>
                     <a href="contact.html">
                         <img src="contact_button.png" alt="Contact" class="button-img" />
-                </a>
+                    </a>
+                </div>
             </div>
         </div>
     </main>
