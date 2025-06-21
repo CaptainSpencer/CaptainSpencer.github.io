@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title id="page-title">Contact | Spencer Dewbury</title>
   <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #f5f0e6;
@@ -13,6 +14,7 @@
       --header-footer: #5a4636;
       --font-sans: 'Lato', sans-serif;
       --font-serif: Georgia, serif;
+      --font-pixel: 'Press Start 2P', cursive;
     }
 
     body {
@@ -28,11 +30,14 @@
 
     header {
       background: var(--header-footer);
-      padding: 1rem 2rem;
+      padding: 1.5rem 2rem;
       color: var(--bg);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-family: var(--font-pixel);
+      font-size: 0.9rem;
+      letter-spacing: 1px;
     }
 
     nav a {
@@ -40,10 +45,12 @@
       color: var(--bg);
       text-decoration: none;
       font-weight: 500;
+      transition: color 0.2s ease, transform 0.2s ease;
     }
 
     nav a:hover {
       color: var(--accent);
+      transform: scale(1.1);
     }
 
     .container {
