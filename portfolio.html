@@ -16,7 +16,10 @@
       --font-pixel: 'Press Start 2P', cursive;
     }
 
-    body {
+    html, body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
       margin: 0;
       font-family: var(--font-pixel);
       background: url('portfolio-bg.png') no-repeat center center fixed;
@@ -61,6 +64,7 @@
       max-width: 800px;
       margin: 4rem auto;
       padding: 2rem;
+      flex: 1;
     }
 
     h1 {
@@ -116,7 +120,6 @@
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.5rem;
-      margin-top: 4rem;
       border-top: 3px solid var(--accent);
     }
 
