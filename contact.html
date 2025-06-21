@@ -1,129 +1,122 @@
-<!DOCTYPE html>More actions
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title id="page-title">Contact | Spencer Dewbury</title>
+  <title>Contact | Spencer Dewbury</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f5f0e6;
-      --text: #3e352e;
-      --accent: #a37b52;
-      --header-footer: #5a4636;
-      --font-sans: 'Lato', sans-serif;
-      --font-serif: Georgia, serif;
+      --ice-blue: #a3d4f7;
+      --text-light: #eaf9ff;
+      --accent: #6bb1e0;
+      --deep-blue: #102131;
       --font-pixel: 'Press Start 2P', cursive;
     }
 
     body {
       margin: 0;
-      font-family: var(--font-sans);
-      background: var(--bg) url('https://www.transparenttextures.com/patterns/stardust.png');
-      color: var(--text);
-      background-color: #0d1b2a;
-      background-size: 200px 200px;
-      background-attachment: fixed;
-      overflow-x: hidden;
+      font-family: var(--font-pixel);
+      background: url('contact-bg.png') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-light);
     }
 
     header {
-      background: var(--header-footer);
-      padding: 1.5rem 2rem;
-      color: var(--bg);
+      background: rgba(16, 33, 49, 0.85);
+      border-bottom: 3px solid var(--accent);
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-family: var(--font-pixel);
+    }
+
+    header strong {
       font-size: 0.9rem;
-      letter-spacing: 1px;
+      color: var(--ice-blue);
+      text-shadow: 1px 1px #000;
     }
 
     nav a {
-      margin-left: 1.5rem;
-      color: var(--bg);
+      color: var(--text-light);
+      margin-left: 1rem;
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s ease, transform 0.2s ease;
+      font-size: 0.65rem;
+      padding: 6px 12px;
+      border: 2px solid transparent;
     }
 
-    nav a:hover {
-      color: var(--accent);
-      transform: scale(1.1);
+    nav a:hover,
+    nav a.active {
+      border-color: var(--accent);
+      background-color: rgba(163, 212, 247, 0.15);
     }
 
     .container {
+      background-color: rgba(0, 0, 0, 0.65);
+      border: 3px solid #3a5a6a;
+      box-shadow: 0 0 12px rgba(163, 212, 247, 0.3);
       max-width: 600px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-      animation: fadeIn 2s ease-in;
-    }
-
-    h1 {
-      font-family: var(--font-serif);
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #ffffff;
-      text-shadow: 1px 1px 2px #000;
+      margin: 6rem auto;
+      padding: 2rem;
+      text-align: center;
     }
 
     p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #eaeaea;
+      font-size: 0.65rem;
+      line-height: 1.7;
+      color: var(--text-light);
+      margin-bottom: 2rem;
     }
 
-    a {
-      color: var(--accent);
+    .pixel-button {
+      display: inline-block;
+      background-color: #20445e;
+      color: var(--ice-blue);
+      padding: 10px 16px;
+      border: 2px solid var(--accent);
       text-decoration: none;
+      box-shadow: 2px 2px #000;
+      margin-top: 1rem;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .pixel-button:hover {
+      background-color: var(--accent);
+      color: #102131;
     }
 
     footer {
-      background: var(--header-footer);
-      color: var(--bg);
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
       margin-top: 4rem;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      text-align: center;
+      font-size: 0.5rem;
+      color: #cfe8f3;
+      background-color: rgba(16, 33, 49, 0.85);
+      padding: 2rem;
+      border-top: 3px solid var(--accent);
     }
   </style>
-  <script>
-    // Animate page title like Terraria blinking effect
-    const titleFrames = ["Contact | Spencer Dewbury", "Contact ✨ Spencer Dewbury"];
-    let current = 0;
-    setInterval(() => {
-      document.title = titleFrames[current % titleFrames.length];
-      current++;
-    }, 1000);
-  </script>
 </head>
 <body>
 
   <header>
-    <div><strong>Spencer Dewbury</strong></div>
+    <strong>Spencer Dewbury</strong>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="portfolio.html">Portfolio</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="active">Contact</a>
     </nav>
   </header>
 
   <div class="container">
-    <h1>Contact</h1>
     <p>Interested in working together, setting up an interview, or just want to say hi?</p>
-
-    <p>📧 <a href="mailto:dewburyspencer@gmail.com">dewburyspencer@gmail.com</a></p>
+    <a href="mailto:dewburyspencer@gmail.com" class="pixel-button">EMAIL ME</a>
   </div>
 
   <footer>
+    &copy; 2025 Spencer Dewbury — All rights reserved.
+  </footer>
+
+</body>
+</html>
