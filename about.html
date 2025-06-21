@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | Spencer Dewbury</title>
+  <title id="page-title">About | Spencer Dewbury</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #f5f0e6;
@@ -12,22 +14,30 @@
       --header-footer: #5a4636;
       --font-sans: 'Lato', sans-serif;
       --font-serif: Georgia, serif;
+      --font-pixel: 'Press Start 2P', cursive;
     }
 
     body {
       margin: 0;
       font-family: var(--font-sans);
-      background: var(--bg);
+      background: var(--bg) url('https://www.transparenttextures.com/patterns/stardust.png');
       color: var(--text);
+      background-color: #0d1b2a;
+      background-size: 200px 200px;
+      background-attachment: fixed;
+      overflow-x: hidden;
     }
 
     header {
       background: var(--header-footer);
-      padding: 1rem 2rem;
+      padding: 1.5rem 2rem;
       color: var(--bg);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-family: var(--font-pixel);
+      font-size: 0.9rem;
+      letter-spacing: 1px;
     }
 
     nav a {
@@ -35,27 +45,42 @@
       color: var(--bg);
       text-decoration: none;
       font-weight: 500;
+      transition: color 0.2s ease, transform 0.2s ease;
     }
 
     nav a:hover {
       color: var(--accent);
+      transform: scale(1.1);
     }
 
     .container {
       max-width: 800px;
       margin: 3rem auto;
       padding: 0 1rem;
+      animation: fadeIn 2s ease-in;
     }
 
     h1 {
       font-family: var(--font-serif);
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      color: #ffffff;
+      text-shadow: 1px 1px 2px #000;
     }
 
     p {
-      font-size: 1.15rem;
-      line-height: 1.7;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #eaeaea;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     footer {
@@ -66,7 +91,20 @@
       font-size: 0.9rem;
       margin-top: 4rem;
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
+  <script>
+    const titleFrames = ["About | Spencer Dewbury", "About ✨ Spencer Dewbury"];
+    let current = 0;
+    setInterval(() => {
+      document.title = titleFrames[current % titleFrames.length];
+      current++;
+    }, 1000);
+  </script>
 </head>
 <body>
 
@@ -83,8 +121,7 @@
   <div class="container">
     <h1>About Me</h1>
     <p>I'm a freelance journalist focused on music, celebrity culture, and local news stories that matter. Whether I’m covering community events, interviewing artists, or writing long-form features, my aim is to highlight nuance, honesty, and voice.</p>
-
-    <p>I’ve contributed to a range of publications and enjoy blending structured reporting with a personal, grounded style. When I’m not writing, I’m usually immersed in music subcultures, scrolling deep into internet rabbit holes, or exploring the aesthetics and ethos of underground rap and tattoo culture.</p>
+    <p>I’ve contributed to a range of publications and enjoy blending structured reporting with a personal, grounded style. When I’m not writing, you can find me people-watching, listening to vinyl, or getting lost in research rabbit holes.</p>
   </div>
 
   <footer>
