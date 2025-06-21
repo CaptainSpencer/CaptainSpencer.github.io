@@ -114,10 +114,15 @@
       margin-top: 1.5rem;
     }
 
+    .sprite {
+      flex-shrink: 0;
+    }
+
     .sprite img {
-      width: 128px;
+      width: 256px;
       height: auto;
       image-rendering: pixelated;
+      display: block;
     }
 
     footer {
@@ -127,6 +132,18 @@
       background-color: rgba(8, 31, 29, 0.85);
       padding: 2rem;
       border-top: 3px solid var(--mushroom-glow);
+    }
+
+    @media (max-width: 700px) {
+      .about-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .sprite img {
+        width: 192px;
+        margin-top: 1.5rem;
+      }
     }
   </style>
 </head>
