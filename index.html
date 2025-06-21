@@ -19,95 +19,94 @@
         }
 
         body {
-            background-color: #0d1b2a; /* Your existing background color */
+            background-color: #0d1b2a;
             background-image: url('pixel_banner.png'), url('https://www.transparenttextures.com/patterns/stardust.png');
-            background-size: cover, 200px 200px; /* pixel_banner covers, stardust repeats */
+            background-size: cover, 200px 200px;
             background-repeat: no-repeat, repeat;
-            background-attachment: fixed; /* Keep background fixed */
-            font-family: 'Lato', sans-serif; /* Keep Lato for general text if preferred, or change to Press Start 2P */
-            color: #f5f0e6; /* Base text color */
+            background-attachment: fixed;
+            font-family: 'Lato', sans-serif;
+            color: #f5f0e6;
 
-            /* Flexbox for centering content on the page */
             display: flex;
-            flex-direction: column; /* Allows content to stack and footer to be at the bottom */
-            justify-content: center; /* Vertically center the main content */
-            align-items: center; /* Horizontally center the main content */
-            min-height: 100vh; /* Make body at least full viewport height */
-            overflow: hidden; /* Prevent scrollbars from background */
+            flex-direction: column;
+            justify-content: flex-start; /* Changed to flex-start to allow content to flow naturally */
+            align-items: center;
+            min-height: 100vh;
+            /* Removed 'overflow: hidden;' to allow scrolling */
 
-            /* Add some overall top/bottom padding to ensure content isn't right at the edge */
-            padding: 20px 0; /* New: Added padding to body for overall spacing */
+            padding: 40px 0; /* Increased top/bottom padding for more breathing room */
         }
 
         /* Main Content Area */
         .content {
-            max-width: 800px; /* Adjust max-width based on your new desired layout */
+            max-width: 800px;
             width: 90%;
             text-align: center;
-            padding: 0 20px; /* Adjusted padding - removed top/bottom, kept left/right */
+            padding: 0 20px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center items within the content div */
-            flex-grow: 0; /* Changed from 1 - prevents content from aggressively stretching */
+            align-items: center;
+            flex-grow: 0;
+            margin-bottom: 40px; /* Added margin-bottom to ensure space above footer */
         }
 
         /* Your Existing Title PNG */
         .main-title-img {
             width: 100%;
-            max-width: 500px; /* Adjust based on the actual size and desired display of your PNG */
+            max-width: 500px;
             height: auto;
-            margin-bottom: 5px; /* Significantly reduced from 20px */
+            margin-bottom: 5px;
         }
 
         /* New Subtitle Text Styling */
         .new-subheader-text {
             font-family: 'Press Start 2P', cursive;
-            font-size: 1rem; /* Adjust size as needed */
-            color: #F8E2B2; /* Lighter gold/cream color from previous mockup */
-            text-shadow: 2px 2px 0px rgba(0,0,0,0.3); /* Subtle pixel shadow */
-            margin-bottom: 15px; /* Reduced from 30px */
+            font-size: 1rem;
+            color: #F8E2B2;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+            margin-bottom: 15px;
         }
 
         /* Bio Text Styling */
         .bio-text {
-            font-size: 0.95rem; /* Your original size, adjust if needed */
-            line-height: 1.6; /* Good readability */
-            color: #F8E2B2; /* Match subtitle color for consistency */
-            max-width: 700px; /* Allow bio text to be wider */
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #F8E2B2;
+            max-width: 700px;
             padding: 0 10px;
-            margin-bottom: 30px; /* Reduced from 50px */
-            text-shadow: 1px 1px 0px rgba(0,0,0,0.2); /* Lighter shadow for readability */
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
         }
 
         /* Button Containers */
         .buttons-stack {
             display: flex;
-            flex-direction: column; /* Stack the button rows vertically */
-            align-items: center; /* Center the button rows */
-            gap: 15px; /* Space between the stacked button rows */
-            margin-top: 0; /* Removed explicit margin-top as bio-text margin handles spacing */
+            flex-direction: column;
+            align-items: center;
+            gap: 30px; /* Increased space between button rows for the even larger buttons */
+            margin-top: 0;
+            margin-bottom: 40px; /* Increased margin-bottom to separate buttons from footer more */
         }
 
         .main-button-row,
         .sub-button-row {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* Allow buttons to wrap within their row */
-            gap: 20px; /* Space between buttons in the same row */
+            flex-wrap: wrap;
+            gap: 40px; /* INCREASED space between buttons in the same row */
         }
 
         /* Styling for your Button PNGs */
         .button-img {
             width: auto; /* Let image maintain aspect ratio */
-            height: 150px; /* SIGNIFICANTLY INCREASED from 120px */
-            max-width: 500px; /* SIGNIFICANTLY INCREASED from 450px */
-            transition: transform 0.1s ease-out; /* Subtle animation on hover */
-            /* filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.5)); */ /* Optional shadow for buttons */
+            height: 250px; /* DRASTICALLY INCREASED from 180px - make them HUGE */
+            max-width: 700px; /* DRASTICALLY INCREASED from 600px - allows for wider buttons */
+            transition: transform 0.1s ease-out;
         }
 
         .button-img:hover {
-            transform: translateY(-5px); /* Slightly more lift on hover for bigger buttons */
+            transform: translateY(-8px); /* More pronounced lift on hover for bigger buttons */
         }
 
         /* Footer Styling */
@@ -120,7 +119,7 @@
             width: 100%;
         }
 
-        /* Sparkle Animations (retained from your original code, simplified for initial focus) */
+        /* Sparkle Animations (retained) */
         .sparkle {
             position: absolute;
             width: 10px;
@@ -129,7 +128,7 @@
             border-radius: 50%;
             box-shadow: 0 0 6px #a37b52aa;
             animation: sparkle 5s linear infinite;
-            z-index: 0; /* Keep behind content */
+            z-index: 0;
         }
 
         @keyframes sparkle {
@@ -153,16 +152,20 @@
                 margin-bottom: 20px;
             }
             .buttons-stack {
-                gap: 10px; /* Slightly less gap on mobile */
+                gap: 20px; /* Adjust vertical gap on mobile */
+                margin-bottom: 30px; /* Adjust margin on mobile */
+            }
+            .main-button-row,
+            .sub-button-row {
+                gap: 20px; /* Adjust horizontal gap on mobile */
             }
             .button-img {
-                height: 100px; /* INCREASED from 90px for mobile */
+                height: 180px; /* INCREASED from 120px for mobile */
                 max-width: 95%;
             }
         }
     </style>
     <script>
-        // Your existing title animation script
         const titleFrames = ["Spencer Dewbury | Home", "✨ Spencer Dewbury ✨"];
         let current = 0;
         setInterval(() => {
@@ -180,13 +183,10 @@
 
     <main class="content">
         <img class="main-title-img" src="spencer_dewbury_title_transparent.png" alt="Spencer Dewbury">
-
         <p class="new-subheader-text">Music Journalist. News. Celebrity Interviews.</p>
-
         <p class="bio-text">
             I'm Spencer Dewbury: Published journalist with a pulse on music journalism, local news coverage, and conversations with the voices shaping culture.
         </p>
-
         <div class="buttons-stack">
             <div class="main-button-row">
                 <a href="portfolio.html">
