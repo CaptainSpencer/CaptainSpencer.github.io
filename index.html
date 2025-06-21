@@ -21,63 +21,59 @@
       background-attachment: fixed;
       font-family: 'Lato', sans-serif;
       color: #f5f0e6;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
     }
 
-    .container {
+    .content {
+      max-width: 680px;
+      margin: 40px auto;
+      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
-      text-align: center;
     }
 
-    .container img.title {
+    .title {
       width: 100%;
       max-width: 420px;
-      margin-bottom: 4px;
+      height: auto;
+      margin-bottom: 12px;
     }
 
     .subheader {
       font-family: 'Press Start 2P', cursive;
       font-size: 0.8rem;
       color: #a37b52;
-      margin-bottom: 2px;
+      margin-bottom: 6px;
     }
 
     .bio-text {
-      font-family: 'Lato', sans-serif;
-      font-size: 0.9rem;
-      max-width: 520px;
-      line-height: 1.4;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      max-width: 560px;
       padding: 0 10px;
-      margin-bottom: 10px;
     }
 
     .buttons {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
-      margin-bottom: 12px;
+      gap: 8px;
+      margin-bottom: 24px;
     }
 
     .sub-buttons {
       display: flex;
-      gap: 6px;
+      gap: 8px;
     }
 
     footer {
-      position: absolute;
-      bottom: 16px;
-      width: 100%;
       text-align: center;
       font-size: 0.75rem;
       font-family: 'Press Start 2P', cursive;
       color: #aaa;
+      margin-top: 60px;
+      padding-bottom: 16px;
     }
 
     .sparkle {
@@ -114,8 +110,8 @@
   <div class="sparkle" style="top: 70%; left: 80%; animation-delay: 3.2s;"></div>
   <div class="sparkle" style="top: 85%; left: 40%; animation-delay: 4.5s;"></div>
 
-  <div class="container">
-    <img class="title" src="spencer_dewbury_title_transparent.png" alt="Spencer Dewbury" />
+  <main class="content">
+    <img class="title" src="spencer_dewbury_title_transparent.png" alt="Spencer Dewbury">
     <p class="subheader">Journalist with a focus on music journalism, news, and celebrity interviews.</p>
     <p class="bio-text">
       I'm Spencer Dewbury: Published journalist with a pulse on music journalism, local news coverage, and conversations with the voices shaping culture.
@@ -134,9 +130,8 @@
         </a>
       </div>
     </div>
-  </div>
+  </main>
 
-  <!-- Sparkles by header -->
   <div class="sparkle" style="top: 14%; left: 45%; width: 12px; height: 12px; animation-delay: 0.2s;"></div>
   <div class="sparkle" style="top: 15%; left: 52%; width: 14px; height: 14px; animation-delay: 1.1s;"></div>
   <div class="sparkle" style="top: 12%; left: 50%; width: 10px; height: 10px; animation-delay: 2s;"></div>
