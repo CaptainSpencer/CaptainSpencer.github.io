@@ -71,7 +71,7 @@
       color: #F8E2B2;
       max-width: 700px;
       padding: 0 10px;
-      margin-bottom: 5px; /* Tighter space below */
+      margin-bottom: 0; /* ✅ Tighter spacing below bio */
       text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
     }
 
@@ -85,7 +85,7 @@
 
     .button-img {
       width: auto;
-      height: 200px;
+      height: 200px; /* ✅ Shrunk from 350px */
       max-width: 800px;
       transition: transform 0.1s ease-out;
     }
@@ -133,7 +133,7 @@
 
       .bio-text {
         font-size: 0.85rem;
-        margin-bottom: 8px;
+        margin-bottom: 0;
       }
 
       .button-img {
@@ -170,8 +170,8 @@
         I'm Spencer Dewbury: Published journalist with a pulse on music journalism, local news coverage, and conversations with the voices shaping culture.
       </p>
 
-      <!-- 👇 Pulled buttons up using inline negative margin -->
-      <div class="buttons-stack" style="margin-top: -30px;">
+      <!-- ✅ Buttons pulled up -->
+      <div class="buttons-stack" style="margin-top: -50px;">
         <div class="main-button-row">
           <a href="portfolio.html">
             <img src="explore_button.png" alt="Explore My Work" class="button-img" />
