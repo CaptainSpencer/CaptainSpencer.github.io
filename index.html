@@ -7,6 +7,12 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     .sparkle {
       position: absolute;
       width: 10px;
@@ -28,15 +34,11 @@
       --bg: #0d1b2a;
       --text: #f5f0e6;
       --accent: #a37b52;
-      --header-footer: #5a4636;
       --font-sans: 'Lato', sans-serif;
-      --font-serif: Georgia, serif;
       --font-pixel: 'Press Start 2P', cursive;
     }
 
     html, body {
-      margin: 0;
-      padding: 0;
       background-color: var(--bg);
       background-image: url('pixel_banner.png'), url('https://www.transparenttextures.com/patterns/stardust.png');
       background-size: cover, 200px 200px;
@@ -51,28 +53,26 @@
     header {
       font-family: var(--font-pixel);
       text-align: center;
-      padding: 1rem 0 0.5rem 0;
+      padding: 20px 0 10px 0;
     }
 
     header img {
       max-width: 460px;
       height: auto;
       display: block;
-      margin: 0 auto 0.2rem auto;
+      margin: 0 auto 8px auto;
     }
 
-    header p {
+    .subheader {
       font-size: 1rem;
       color: var(--accent);
-      margin: 0.1rem auto;
-      line-height: 1.2;
+      margin-bottom: 4px;
     }
 
     .bio-text {
-      margin: 0.2rem auto 0.4rem auto;
+      margin: 0 auto 8px auto;
       max-width: 540px;
-      font-family: var(--font-sans);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       line-height: 1.3;
     }
 
@@ -80,18 +80,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 0.4rem;
-    }
-
-    .button-column a {
-      margin: 0;
+      gap: 10px;
+      margin-top: 10px;
     }
 
     .sub-buttons {
       display: flex;
       justify-content: center;
-      column-gap: 0.4rem;
-      margin-top: 0.2rem;
+      gap: 10px;
     }
 
     footer {
@@ -99,8 +95,7 @@
       font-size: 0.75rem;
       color: #aaa;
       font-family: var(--font-pixel);
-      padding-bottom: 1rem;
-      margin-top: 1.5rem;
+      padding: 16px 0;
     }
   </style>
   <script>
@@ -122,7 +117,7 @@
 
   <header>
     <img src="spencer_dewbury_title_transparent.png" alt="Spencer Dewbury" />
-    <p>Journalist with a focus on music journalism, news, and celebrity interviews.</p>
+    <p class="subheader">Journalist with a focus on music journalism, news, and celebrity interviews.</p>
     <p class="bio-text">
       I'm Spencer Dewbury: Published journalist with a pulse on music journalism, local news coverage, and conversations with the voices shaping culture.
     </p>
