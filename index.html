@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title id="page-title">Spencer Dewbury | Home</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -75,10 +75,18 @@
       margin-top: 1rem;
     }
 
+    .button-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
     .sub-buttons {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 1.25rem;
       margin-top: 1rem;
     }
 
@@ -107,7 +115,6 @@
 </head>
 <body>
   <!-- Sparkles Layer -->
-  <!-- General background sparkles -->
   <div class="sparkle" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
   <div class="sparkle" style="top: 30%; left: 60%; animation-delay: 1.5s;"></div>
   <div class="sparkle" style="top: 50%; left: 25%; animation-delay: 2.8s;"></div>
@@ -115,25 +122,26 @@
   <div class="sparkle" style="top: 85%; left: 40%; animation-delay: 4.5s;"></div>
 
   <header>
-    <img src="spencer_dewbury_title_transparent.png" alt="Spencer Dewbury"
-         style="max-width: 500px; height: auto; margin-bottom: 0.5rem;" />
+    <img src="spencer_dewbury_title_transparent.png" alt="Spencer Dewbury" style="max-width: 500px; height: auto; margin-bottom: 0.5rem;" />
     <p>Journalist with a focus on music journalism, news, and celebrity interviews.</p>
     <p style="margin-top: 0.25rem; max-width: 600px; margin-left: auto; margin-right: auto; font-family: var(--font-sans);">
       I'm Spencer Dewbury: Published journalist with a pulse on music journalism, local news coverage, and conversations with the voices shaping culture.
     </p>
-    <div class="button-column" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; margin-top: 1rem;">
-  <a href="portfolio.html">
-    <img src="explore_button.png" alt="Explore My Work" style="width: 240px; height: auto;" />
-  </a>
-  <div class="sub-buttons" style="display: flex; justify-content: center; gap: 1.25rem;">
-    <a href="about.html">
-      <img src="about_button.png" alt="About Me" style="width: 220px; height: auto;" />
-    </a>
-    <a href="contact.html">
-      <img src="contact_button.png" alt="Contact" style="width: 220px; height: auto;" />
-    </a>
-  </div>
-</div>
+
+    <div class="button-column">
+      <a href="portfolio.html">
+        <img src="explore_button.png" alt="Explore My Work" style="width: 240px; height: auto;" />
+      </a>
+      <div class="sub-buttons">
+        <a href="about.html">
+          <img src="about_button.png" alt="About Me" style="width: 220px; height: auto;" />
+        </a>
+        <a href="contact.html">
+          <img src="contact_button.png" alt="Contact" style="width: 220px; height: auto;" />
+        </a>
+      </div>
+    </div>
+
     <!-- Focused sparkles near logo -->
     <div class="sparkle" style="top: 14%; left: 45%; width: 12px; height: 12px; animation-delay: 0.2s;"></div>
     <div class="sparkle" style="top: 15%; left: 52%; width: 14px; height: 14px; animation-delay: 1.1s;"></div>
@@ -143,6 +151,5 @@
   <footer>
     &copy; 2025 Spencer Dewbury — All rights reserved.
   </footer>
-
 </body>
 </html>
