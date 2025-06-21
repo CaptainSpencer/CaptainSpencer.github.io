@@ -52,14 +52,6 @@
       gap: 1rem;
     }
 
-    .buttons a {
-      background-size: contain;
-      display: inline-block;
-      width: 240px;
-      height: 60px;
-      text-indent: -9999px;
-    }
-
     footer {
       position: absolute;
       bottom: 1rem;
@@ -87,15 +79,22 @@
 <body>
 
   <header>
-    <img src="spencer_dewbury_title_transparent.png" alt="Spencer Dewbury" style="max-width: 100%; height: auto; margin-bottom: 1rem;" />
+    <img src="spencer_dewbury_title_transparent.png" alt="Spencer Dewbury"
+         style="max-width: 500px; height: auto; margin-bottom: 1rem;" />
     <p>Journalist with a focus on music journalism, news, and celebrity interviews.</p>
     <p style="margin-top: 1rem; font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto; font-family: var(--font-sans);">
       I'm Spencer Dewbury: Published journalist with a pulse on music journalism, local news coverage, and conversations with the voices shaping culture.
     </p>
     <div class="buttons">
-      <a href="portfolio.html" style="background: url('explore_button.png') no-repeat center center;">Explore My Work</a>
-      <a href="about.html" style="background: url('about_button.png') no-repeat center center;">About Me</a>
-      <a href="contact.html" style="background: url('contact_button.png') no-repeat center center;">Contact</a>
+      <a href="portfolio.html">
+        <img src="explore_button.png" alt="Explore My Work" style="max-width: 240px; height: auto;" />
+      </a>
+      <a href="about.html">
+        <img src="about_button.png" alt="About Me" style="max-width: 240px; height: auto;" />
+      </a>
+      <a href="contact.html">
+        <img src="contact_button.png" alt="Contact" style="max-width: 240px; height: auto;" />
+      </a>
     </div>
   </header>
 
