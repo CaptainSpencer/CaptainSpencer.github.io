@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact | Spencer Dewbury</title>
+  <title id="page-title">Contact | Spencer Dewbury</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <style>
     :root {
       --bg: #f5f0e6;
@@ -17,8 +18,12 @@
     body {
       margin: 0;
       font-family: var(--font-sans);
-      background: var(--bg);
+      background: var(--bg) url('https://www.transparenttextures.com/patterns/stardust.png');
       color: var(--text);
+      background-color: #0d1b2a;
+      background-size: 200px 200px;
+      background-attachment: fixed;
+      overflow-x: hidden;
     }
 
     header {
@@ -45,17 +50,21 @@
       max-width: 600px;
       margin: 3rem auto;
       padding: 0 1rem;
+      animation: fadeIn 2s ease-in;
     }
 
     h1 {
       font-family: var(--font-serif);
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      color: #ffffff;
+      text-shadow: 1px 1px 2px #000;
     }
 
     p {
       font-size: 1.1rem;
       line-height: 1.6;
+      color: #eaeaea;
     }
 
     a {
@@ -75,7 +84,21 @@
       font-size: 0.9rem;
       margin-top: 4rem;
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
+  <script>
+    // Animate page title like Terraria blinking effect
+    const titleFrames = ["Contact | Spencer Dewbury", "Contact ✨ Spencer Dewbury"];
+    let current = 0;
+    setInterval(() => {
+      document.title = titleFrames[current % titleFrames.length];
+      current++;
+    }, 1000);
+  </script>
 </head>
 <body>
 
@@ -92,8 +115,7 @@
   <div class="container">
     <h1>Get in Touch</h1>
     <p>Interested in working together, setting up an interview, or just want to say hi?</p>
-    <p>📧 <a href="mailto:dewburyspencer@gmail.com">dewburyspencer@gmail.com</a></p>
-
+    <p>📧 <a href="mailto:dewburyspencer@example.com">dewburyspencer@example.com</a></p>
   </div>
 
   <footer>
