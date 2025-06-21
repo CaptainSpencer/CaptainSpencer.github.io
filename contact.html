@@ -67,11 +67,34 @@
       flex: 1;
     }
 
+    .contact-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .contact-text {
+      flex: 1;
+    }
+
+    .button-wrapper {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .sprite img {
+      width: 128px;
+      height: auto;
+      image-rendering: pixelated;
+    }
+
     p {
       font-size: 0.65rem;
       line-height: 1.7;
       color: var(--frost-white);
-      margin-bottom: 2rem;
+      margin-bottom: 0.5rem;
     }
 
     .pixel-button {
@@ -82,7 +105,6 @@
       border: 2px solid var(--ice-accent);
       text-decoration: none;
       box-shadow: 2px 2px #000;
-      margin-top: 1rem;
     }
 
     .pixel-button:hover {
@@ -113,8 +135,17 @@
   </header>
 
   <div class="container">
-    <p>Interested in working together, setting up an interview, or just want to say hi?</p>
-    <a href="mailto:dewburyspencer@gmail.com" class="pixel-button">EMAIL ME</a>
+    <div class="contact-flex">
+      <div class="contact-text">
+        <p>Interested in working together, setting up an interview, or just want to say hi?</p>
+        <div class="button-wrapper">
+          <a href="mailto:dewburyspencer@gmail.com" class="pixel-button">EMAIL ME</a>
+        </div>
+      </div>
+      <div class="sprite">
+        <img src="contact_sprite.png" alt="Spencer contact sprite">
+      </div>
+    </div>
   </div>
 
   <footer>
