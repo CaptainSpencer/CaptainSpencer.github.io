@@ -84,7 +84,8 @@
     }
 
     .explore-button-row {
-      margin-top: 30px;
+      margin-top: -10px; /* pull it right up to bio */
+      margin-bottom: 30px;
     }
 
     .button-img {
@@ -94,12 +95,12 @@
       transition: transform 0.1s ease-out;
     }
 
-    .button-img:hover {
-      transform: translateY(-10px);
+    .explore-button-img {
+      height: 260px;
     }
 
-    .explore-button-img {
-      height: 260px; /* 🔥 bigger CTA */
+    .button-img:hover {
+      transform: translateY(-10px);
     }
 
     footer {
@@ -182,21 +183,21 @@
         I'm Spencer Dewbury: Published journalist with a pulse on music journalism, local news coverage, and conversations with the voices shaping culture.
       </p>
 
-      <!-- 🔁 Swapped button order -->
-      <div class="buttons-stack" style="margin-top: -50px;">
-        <div class="sub-button-row">
-          <a href="about.html">
-            <img src="about_button.png" alt="About Me" class="button-img" />
-          </a>
-          <a href="contact.html">
-            <img src="contact_button.png" alt="Contact" class="button-img" />
-          </a>
-        </div>
-        <div class="explore-button-row">
-          <a href="portfolio.html">
-            <img src="explore_button.png" alt="Explore My Work" class="button-img explore-button-img" />
-          </a>
-        </div>
+      <!-- 🔥 Explore My Work is now featured right after the bio -->
+      <div class="explore-button-row">
+        <a href="portfolio.html">
+          <img src="explore_button.png" alt="Explore My Work" class="button-img explore-button-img" />
+        </a>
+      </div>
+
+      <!-- About and Contact buttons below -->
+      <div class="sub-button-row">
+        <a href="about.html">
+          <img src="about_button.png" alt="About Me" class="button-img" />
+        </a>
+        <a href="contact.html">
+          <img src="contact_button.png" alt="Contact" class="button-img" />
+        </a>
       </div>
     </div>
   </main>
