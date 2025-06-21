@@ -8,83 +8,85 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f5f0e6;
-      --text: #3e352e;
-      --accent: #a37b52;
-      --header-footer: #5a4636;
-      --font-sans: 'Lato', sans-serif;
-      --font-serif: Georgia, serif;
+      --bg-crimson: #3b1c1c;
+      --text-glow: #fce8d5;
+      --accent: #e76f51;
+      --shadow: #1a0b0b;
+      --pixel-border: #5e2b1d;
       --font-pixel: 'Press Start 2P', cursive;
     }
 
     body {
       margin: 0;
-      font-family: var(--font-sans);
-      background: var(--bg) url('https://www.transparenttextures.com/patterns/stardust.png');
-      color: var(--text);
-      background-color: #0d1b2a;
-      background-size: 200px 200px;
-      background-attachment: fixed;
-      overflow-x: hidden;
+      font-family: var(--font-pixel);
+      background: url('portfolio-bg.png') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-glow);
     }
 
     header {
-      background: var(--header-footer);
-      padding: 1.5rem 2rem;
-      color: var(--bg);
+      background: rgba(59, 28, 28, 0.9);
+      border-bottom: 3px solid var(--accent);
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-family: var(--font-pixel);
+    }
+
+    header strong {
       font-size: 0.9rem;
-      letter-spacing: 1px;
+      color: var(--accent);
+      text-shadow: 1px 1px var(--shadow);
     }
 
     nav a {
-      margin-left: 1.5rem;
-      color: var(--bg);
+      color: var(--text-glow);
+      margin-left: 1rem;
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s ease, transform 0.2s ease;
+      font-size: 0.65rem;
+      padding: 6px 12px;
+      border: 2px solid transparent;
     }
 
-    nav a:hover {
-      color: var(--accent);
-      transform: scale(1.1);
+    nav a:hover,
+    nav a.active {
+      border-color: var(--accent);
+      background-color: rgba(231, 111, 81, 0.2);
     }
 
     .container {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-      animation: fadeIn 2s ease-in;
-    }
-
-    h1, h2, h3 {
-      font-family: var(--font-serif);
-      color: #ffffff;
-      text-shadow: 1px 1px 2px #000;
+      background-color: rgba(0, 0, 0, 0.65);
+      border: 3px solid var(--pixel-border);
+      box-shadow: 0 0 12px rgba(231, 111, 81, 0.3);
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 2rem;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 1.2rem;
+      color: var(--accent);
+      text-align: center;
       margin-bottom: 2rem;
+      text-shadow: 2px 2px #000;
     }
 
     h2 {
-      font-size: 1.8rem;
-      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-glow);
       border-bottom: 2px solid var(--accent);
-      padding-bottom: 0.3rem;
+      padding-bottom: 0.4rem;
+      margin-top: 2rem;
+      text-shadow: 1px 1px var(--shadow);
     }
 
     .project {
-      margin-bottom: 1.5rem;
+      margin-top: 1.5rem;
     }
 
     .project h3 {
-      margin: 0 0 0.3rem;
-      font-size: 1.3rem;
+      margin: 0;
+      font-size: 0.75rem;
     }
 
     .project a {
@@ -96,23 +98,26 @@
       text-decoration: underline;
     }
 
-    .project .meta {
-      font-size: 0.9rem;
-      color: #cbb9a6;
+    .meta {
+      font-size: 0.6rem;
+      color: #ffcdb2;
       margin-bottom: 0.5rem;
     }
 
     p {
-      color: #eaeaea;
+      font-size: 0.65rem;
+      line-height: 1.7;
+      color: var(--text-glow);
     }
 
     footer {
-      background: var(--header-footer);
-      color: var(--bg);
+      background: rgba(59, 28, 28, 0.9);
+      color: #f7d8c7;
       text-align: center;
       padding: 2rem 1rem;
-      font-size: 0.9rem;
+      font-size: 0.5rem;
       margin-top: 4rem;
+      border-top: 3px solid var(--accent);
     }
 
     @keyframes fadeIn {
@@ -132,11 +137,11 @@
 <body>
 
   <header>
-    <div><strong>Spencer Dewbury</strong></div>
+    <strong>Spencer Dewbury</strong>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="portfolio.html">Portfolio</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
