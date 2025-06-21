@@ -12,7 +12,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            /* Ensure existing PNGs maintain pixelated look when scaled */
             image-rendering: pixelated;
             image-rendering: -moz-crisp-edges;
             image-rendering: crisp-edges;
@@ -29,11 +28,10 @@
 
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Start content from the top */
+            justify-content: flex-start;
             align-items: center;
             min-height: 100vh;
-
-            padding: 10px 0; /* Reduced overall body padding to give more vertical space */
+            padding: 0;
         }
 
         /* Main Content Area */
@@ -41,13 +39,12 @@
             max-width: 800px;
             width: 90%;
             text-align: center;
-            padding: 0 20px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
             align-items: center;
             flex-grow: 0;
-            margin-bottom: 10px; /* Reduced margin-bottom for content area */
+            /* No margin or padding here to allow children to be controlled */
         }
 
         /* Your Existing Title PNG */
@@ -55,9 +52,20 @@
             width: 100%;
             max-width: 500px;
             height: auto;
-            margin-bottom: -50px; /* INCREASED NEGATIVE MARGIN to pull subheader higher */
+            /* We're going to use transform on content-below-logo instead */
+            margin-bottom: 0; /* Set to 0 as other element will handle overlap */
             position: relative;
-            z-index: 1; /* Keep logo potentially behind text */
+            z-index: 1;
+        }
+
+        /* NEW CONTAINER for text and buttons */
+        .content-below-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            transform: translateY(-80px); /* AGGRESSIVE UPWARD SHIFT! Adjust this value! */
+            z-index: 2; /* Ensure it's above the logo */
         }
 
         /* New Subtitle Text Styling */
@@ -66,10 +74,7 @@
             font-size: 1rem;
             color: #F8E2B2;
             text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
-            margin-top: 0px; /* Ensure no top margin pushing it down */
-            margin-bottom: 5px; /* Very small margin below subheader */
-            position: relative;
-            z-index: 2; /* Ensure text is on top of logo */
+            margin: 0; /* Zero out all margins */
         }
 
         /* Bio Text Styling */
@@ -78,8 +83,9 @@
             line-height: 1.6;
             color: #F8E2B2;
             max-width: 700px;
-            padding: 0 10px;
-            margin-bottom: 0px; /* ELIMINATED space between bio and button stack */
+            padding: 0 10px; /* Keep horizontal padding for readability */
+            margin-top: 5px; /* Small margin from subheader */
+            margin-bottom: 0; /* Zero out bottom margin */
             text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
         }
 
@@ -88,8 +94,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0px; /* ELIMINATED vertical space between button rows */
-            margin-top: 0; /* Ensure no top margin pushing it down */
+            gap: 0px; /* Zero vertical gap between button rows */
+            margin-top: 0; /* Zero top margin from bio */
             margin-bottom: 20px; /* Space from footer */
         }
 
@@ -98,7 +104,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px; /* Horizontal space between buttons in the same row */
+            gap: 15px; /* Horizontal space for buttons */
         }
 
         /* Styling for your Button PNGs */
@@ -121,6 +127,8 @@
             color: #aaa;
             padding: 10px 0;
             width: 100%;
+            /* Ensure footer is not too close due to transform */
+            margin-top: -60px; /* Counter-act the transform to keep footer in place, adjust this if footer overlaps buttons */
         }
 
         /* Sparkle Animations (retained) */
@@ -143,13 +151,16 @@
 
         /* Responsive Adjustments */
         @media (max-width: 768px) {
+            .content-below-logo {
+                transform: translateY(-50px); /* Adjust transform for mobile */
+            }
             .main-title-img {
                 max-width: 90%;
-                margin-bottom: -30px; /* INCREASED NEGATIVE MARGIN for mobile logo/subheader overlap */
+                margin-bottom: 0;
             }
             .new-subheader-text {
                 font-size: 0.8rem;
-                margin-bottom: 5px;
+                margin-bottom: 0px;
             }
             .bio-text {
                 font-size: 0.85rem;
@@ -162,11 +173,14 @@
             }
             .main-button-row,
             .sub-button-row {
-                gap: 10px; /* Slightly tighter horizontal gap on mobile */
+                gap: 10px;
             }
             .button-img {
                 height: 250px;
                 max-width: 95%;
+            }
+            footer {
+                margin-top: -30px; /* Adjust footer counter-transform for mobile */
             }
         }
     </style>
@@ -188,23 +202,25 @@
 
     <main class="content">
         <img class="main-title-img" src="spencer_dewbury_title_transparent.png" alt="Spencer Dewbury">
-        <p class="new-subheader-text">Music Journalist. News. Celebrity Interviews.</p>
-        <p class="bio-text">
-            I'm Spencer Dewbury: Published journalist with a pulse on music journalism, local news coverage, and conversations with the voices shaping culture.
-        </p>
-        <div class="buttons-stack">
-            <div class="main-button-row">
-                <a href="portfolio.html">
-                    <img src="explore_button.png" alt="Explore My Work" class="button-img" />
-                </a>
-            </div>
-            <div class="sub-button-row">
-                <a href="about.html">
-                    <img src="about_button.png" alt="About Me" class="button-img" />
-                </a>
-                <a href="contact.html">
-                    <img src="contact_button.png" alt="Contact" class="button-img" />
-                </a>
+        <div class="content-below-logo">
+            <p class="new-subheader-text">Music Journalist. News. Celebrity Interviews.</p>
+            <p class="bio-text">
+                I'm Spencer Dewbury: Published journalist with a pulse on music journalism, local news coverage, and conversations with the voices shaping culture.
+            </p>
+            <div class="buttons-stack">
+                <div class="main-button-row">
+                    <a href="portfolio.html">
+                        <img src="explore_button.png" alt="Explore My Work" class="button-img" />
+                    </a>
+                </div>
+                <div class="sub-button-row">
+                    <a href="about.html">
+                        <img src="about_button.png" alt="About Me" class="button-img" />
+                    </a>
+                    <a href="contact.html">
+                        <img src="contact_button.png" alt="Contact" class="button-img" />
+                    </a>
+                </div>
             </div>
         </div>
     </main>
