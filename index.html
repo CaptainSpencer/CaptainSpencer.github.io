@@ -32,6 +32,7 @@
         transform: translateY(0) scale(1);
       }
     }
+
     :root {
       --bg: #0d1b2a;
       --text: #f5f0e6;
@@ -52,13 +53,24 @@
       background-attachment: fixed;
       font-family: var(--font-sans);
       color: var(--text);
-      overflow-x: hidden;$1
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
 
     header {
       font-family: var(--font-pixel);
       text-align: center;
-      padding-top: 2rem;
-      padding-bottom: 1rem;$1
+      padding-top: 10vh;
+      padding-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: var(--accent);
+      letter-spacing: 1px;
+    }
 
     .buttons {
       text-align: center;
@@ -73,13 +85,11 @@
     }
 
     footer {
-      position: absolute;
-      bottom: 1rem;
-      width: 100%;
       text-align: center;
       font-size: 0.75rem;
       color: #aaa;
       font-family: var(--font-pixel);
+      padding-bottom: 1rem;
     }
 
     @keyframes fadeInTitle {
@@ -97,7 +107,6 @@
   </script>
 </head>
 <body>
-
   <!-- Sparkles Layer -->
   <!-- General background sparkles -->
   <div class="sparkle" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
@@ -110,10 +119,10 @@
     <img src="spencer_dewbury_title_transparent.png" alt="Spencer Dewbury"
          style="max-width: 500px; height: auto; margin-bottom: 0.5rem;" />
     <p>Journalist with a focus on music journalism, news, and celebrity interviews.</p>
-    <p style="margin-top: 0.25rem;$1">
+    <p style="margin-top: 0.25rem; max-width: 600px; margin-left: auto; margin-right: auto; font-family: var(--font-sans);">
       I'm Spencer Dewbury: Published journalist with a pulse on music journalism, local news coverage, and conversations with the voices shaping culture.
     </p>
-    <div class="buttons" style="margin-top: 0.5rem;">
+    <div class="buttons">
       <a href="portfolio.html">
         <img src="explore_button.png" alt="Explore My Work" style="width: 240px; height: auto;" />
       </a>
@@ -127,10 +136,10 @@
       </div>
     </div>
     <!-- Focused sparkles near logo -->
-  <div class="sparkle" style="top: 14%; left: 45%; width: 12px; height: 12px; animation-delay: 0.2s;"></div>
-  <div class="sparkle" style="top: 15%; left: 52%; width: 14px; height: 14px; animation-delay: 1.1s;"></div>
-  <div class="sparkle" style="top: 12%; left: 50%; width: 10px; height: 10px; animation-delay: 2s;"></div>
-</header>
+    <div class="sparkle" style="top: 14%; left: 45%; width: 12px; height: 12px; animation-delay: 0.2s;"></div>
+    <div class="sparkle" style="top: 15%; left: 52%; width: 14px; height: 14px; animation-delay: 1.1s;"></div>
+    <div class="sparkle" style="top: 12%; left: 50%; width: 10px; height: 10px; animation-delay: 2s;"></div>
+  </header>
 
   <footer>
     &copy; 2025 Spencer Dewbury — All rights reserved.
