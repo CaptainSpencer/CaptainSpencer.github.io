@@ -61,7 +61,8 @@
       font-family: var(--font-pixel);
       text-align: center;
       padding-top: 4vh;
-      padding-bottom: 1rem;$1
+      padding-bottom: 1rem;
+    }
 
     header p {
       font-size: 1rem;
@@ -87,6 +88,7 @@
       color: #aaa;
       font-family: var(--font-pixel);
       padding-bottom: 1rem;
+      margin-top: 2rem;
     }
 
     @keyframes fadeInTitle {
@@ -119,19 +121,19 @@
     <p style="margin-top: 0.25rem; max-width: 600px; margin-left: auto; margin-right: auto; font-family: var(--font-sans);">
       I'm Spencer Dewbury: Published journalist with a pulse on music journalism, local news coverage, and conversations with the voices shaping culture.
     </p>
-    <div class="buttons" style="margin-top: 0.5rem;">
-      <a href="portfolio.html">
-        <img src="explore_button.png" alt="Explore My Work" style="width: 240px; height: auto;" />
-      </a>
-      <div class="sub-buttons" style="margin-top: 0.25rem;">
-        <a href="about.html">
-          <img src="about_button.png" alt="About Me" style="max-width: 240px; height: auto;" />
-        </a>
-        <a href="contact.html">
-          <img src="contact_button.png" alt="Contact" style="max-width: 240px; height: auto;" />
-        </a>
-      </div>
-    </div>
+    <div class="button-column" style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; margin-top: 1rem;">
+  <a href="portfolio.html">
+    <img src="explore_button.png" alt="Explore My Work" style="width: 240px; height: auto;" />
+  </a>
+  <div class="sub-buttons" style="display: flex; justify-content: center; gap: 1.5rem;">
+    <a href="about.html">
+      <img src="about_button.png" alt="About Me" style="max-width: 240px; height: auto;" />
+    </a>
+    <a href="contact.html">
+      <img src="contact_button.png" alt="Contact" style="max-width: 240px; height: auto;" />
+    </a>
+  </div>
+</div>
     <!-- Focused sparkles near logo -->
     <div class="sparkle" style="top: 14%; left: 45%; width: 12px; height: 12px; animation-delay: 0.2s;"></div>
     <div class="sparkle" style="top: 15%; left: 52%; width: 14px; height: 14px; animation-delay: 1.1s;"></div>
