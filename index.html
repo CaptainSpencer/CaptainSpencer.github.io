@@ -29,11 +29,11 @@
 
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Changed to flex-start to allow content to flow naturally from top */
+            justify-content: flex-start;
             align-items: center;
-            min-height: 100vh; /* Ensures body takes at least full viewport height */
+            min-height: 100vh;
 
-            padding: 20px 0; /* Slightly reduced top/bottom padding on body to allow more content space */
+            padding: 20px 0;
         }
 
         /* Main Content Area */
@@ -47,7 +47,7 @@
             flex-direction: column;
             align-items: center;
             flex-grow: 0;
-            margin-bottom: 20px; /* Reduced margin-bottom to bring content closer to footer if needed */
+            margin-bottom: 20px;
         }
 
         /* Your Existing Title PNG */
@@ -55,7 +55,9 @@
             width: 100%;
             max-width: 500px;
             height: auto;
-            margin-bottom: 5px;
+            margin-bottom: -30px; /* NEW: Negative margin to pull subheader up and overlap */
+            position: relative; /* Needed for z-index if text is truly overlaying, might not be necessary yet */
+            z-index: 1; /* Ensure image is behind text if needed, or in front if preferred */
         }
 
         /* New Subtitle Text Styling */
@@ -64,7 +66,10 @@
             font-size: 1rem;
             color: #F8E2B2;
             text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
-            margin-bottom: 10px; /* Slightly reduced to bring bio closer */
+            margin-bottom: 10px;
+            margin-top: 0; /* Ensures no extra top margin pushing it down */
+            position: relative; /* Allow positioning relative to normal flow */
+            z-index: 2; /* Ensure text is on top of the logo */
         }
 
         /* Bio Text Styling */
@@ -74,7 +79,7 @@
             color: #F8E2B2;
             max-width: 700px;
             padding: 0 10px;
-            margin-bottom: 0px; /* DRASITICALLY REDUCED: Eliminates space between bio and button stack */
+            margin-bottom: 0px;
             text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
         }
 
@@ -83,9 +88,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0px; /* DRASITICALLY REDUCED: Eliminates vertical space between button rows */
-            margin-top: 0; /* No top margin here */
-            margin-bottom: 20px; /* Space from footer */
+            gap: 5px;
+            margin-top: 0;
+            margin-bottom: 20px;
         }
 
         .main-button-row,
@@ -93,19 +98,19 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px; /* Space between buttons in the same row, kept at 20px for now */
+            gap: 20px;
         }
 
         /* Styling for your Button PNGs */
         .button-img {
             width: auto;
-            height: 350px; /* EVEN MORE INCREASED from 300px - Let's make them truly dominant */
-            max-width: 800px; /* Maintained for horizontal scaling */
+            height: 350px;
+            max-width: 800px;
             transition: transform 0.1s ease-out;
         }
 
         .button-img:hover {
-            transform: translateY(-10px); /* More pronounced lift on hover */
+            transform: translateY(-10px);
         }
 
         /* Footer Styling */
@@ -140,26 +145,27 @@
         @media (max-width: 768px) {
             .main-title-img {
                 max-width: 90%;
+                margin-bottom: -15px; /* Adjust negative margin for mobile */
             }
             .new-subheader-text {
                 font-size: 0.8rem;
-                margin-bottom: 5px; /* Adjust for closer on mobile */
+                margin-bottom: 5px;
             }
             .bio-text {
                 font-size: 0.85rem;
                 max-width: 90%;
-                margin-bottom: 0px; /* Adjusted for mobile to be very close */
+                margin-bottom: 0px;
             }
             .buttons-stack {
-                gap: 0px; /* Very tight vertical gap on mobile */
-                margin-bottom: 15px; /* Less space from footer on mobile */
+                gap: 5px;
+                margin-bottom: 15px;
             }
             .main-button-row,
             .sub-button-row {
-                gap: 15px; /* Horizontal gap on mobile */
+                gap: 15px;
             }
             .button-img {
-                height: 250px; /* INCREASED from 220px for mobile */
+                height: 250px;
                 max-width: 95%;
             }
         }
