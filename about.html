@@ -63,7 +63,17 @@
       max-width: 680px;
       margin: 4rem auto;
       padding: 2rem;
-      text-align: center;
+      text-align: left;
+      flex: 1;
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .about-text {
       flex: 1;
     }
 
@@ -72,6 +82,7 @@
       font-size: 1.2rem;
       text-shadow: 2px 2px #000;
       margin-bottom: 2rem;
+      text-align: center;
     }
 
     p {
@@ -95,11 +106,6 @@
     .pixel-button:hover {
       background-color: var(--mushroom-glow);
       color: #081f1d;
-    }
-
-    .sprite {
-      text-align: center;
-      margin-top: 2rem;
     }
 
     .sprite img {
@@ -132,12 +138,15 @@
 
   <div class="container">
     <h1>About Me</h1>
-    <p>I'm a freelance journalist focused on music, celebrity culture, and local news stories that matter. Whether I’m covering community events, interviewing artists, or writing long-form features, my aim is to highlight nuance, honesty, and voice.</p>
-    <p>In my free time, I listen to underground rap music and get lost in internet culture and current events.</p>
-    <a href="portfolio.html" class="pixel-button">SEE MY WORK</a>
-
-    <div class="sprite">
-      <img src="spencer-sprite.png" alt="Pixel sprite of Spencer">
+    <div class="about-content">
+      <div class="about-text">
+        <p>I'm a freelance journalist focused on music, celebrity culture, and local news stories that matter. Whether I’m covering community events, interviewing artists, or writing long-form features, my aim is to highlight nuance, honesty, and voice.</p>
+        <p>In my free time, I listen to underground rap music and get lost in internet culture and current events.</p>
+        <a href="portfolio.html" class="pixel-button">SEE MY WORK</a>
+      </div>
+      <div class="sprite">
+        <img src="spencer-sprite.png" alt="Pixel sprite of Spencer">
+      </div>
     </div>
   </div>
 
