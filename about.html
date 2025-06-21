@@ -3,125 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title id="page-title">About | Spencer Dewbury</title>
-  <link rel="icon" type="image/png" href="favicon.png">
+  <title>About | Spencer Dewbury</title>
+  <link rel="icon" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-dark: #0d1b2a;
-      --accent: #ffae3d;
-      --highlight: #ffd37b;
-      --pixel-border: #6e2f14;
+      --forest-dark: #081f1d;
+      --mushroom-glow: #61e294;
+      --text-glow: #c5f9e5;
+      --border-brown: #3e1f0e;
       --font-pixel: 'Press Start 2P', cursive;
     }
 
     body {
       margin: 0;
-      background: #0d1b2a url('https://i.imgur.com/h9KzYdR.png') repeat; /* Replace w/ starry bg if needed */
-      background-size: cover;
-      background-attachment: fixed;
-      color: #fff;
       font-family: var(--font-pixel);
+      background: url('about-bg.png') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-glow);
     }
 
     header {
-      background: #3e1e0e;
-      padding: 1.2rem 2rem;
+      background: rgba(8, 31, 29, 0.85);
+      border-bottom: 3px solid var(--mushroom-glow);
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 4px solid var(--accent);
     }
 
     header strong {
-      font-size: 1rem;
-      color: var(--highlight);
+      font-size: 0.9rem;
+      color: var(--mushroom-glow);
+      text-shadow: 1px 1px #000;
     }
 
     nav a {
-      margin-left: 1.2rem;
-      color: var(--highlight);
+      color: var(--text-glow);
+      margin-left: 1rem;
       text-decoration: none;
-      font-size: 0.75rem;
+      font-size: 0.65rem;
       padding: 6px 12px;
       border: 2px solid transparent;
-      transition: 0.2s;
     }
 
-    nav a:hover, nav a.active {
-      border: 2px solid var(--accent);
-      background-color: #ffae3d22;
+    nav a:hover,
+    nav a.active {
+      border-color: var(--mushroom-glow);
+      background-color: rgba(97, 226, 148, 0.15);
     }
 
     .container {
-      max-width: 700px;
+      background-color: rgba(0, 0, 0, 0.65);
+      border: 3px solid var(--border-brown);
+      box-shadow: 0 0 12px rgba(97, 226, 148, 0.3);
+      max-width: 680px;
       margin: 4rem auto;
       padding: 2rem;
-      border: 4px solid var(--pixel-border);
-      background-color: rgba(0, 0, 0, 0.7);
-      box-shadow: 0 0 10px #000;
+      text-align: center;
     }
 
     h1 {
-      font-size: 1.3rem;
-      color: var(--accent);
-      text-align: center;
-      margin-bottom: 2rem;
+      color: var(--mushroom-glow);
+      font-size: 1.2rem;
       text-shadow: 2px 2px #000;
+      margin-bottom: 2rem;
     }
 
     p {
-      font-size: 0.75rem;
+      font-size: 0.65rem;
       line-height: 1.8;
-      color: #f0e6d2;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
+      color: var(--text-glow);
+    }
+
+    .pixel-button {
+      display: inline-block;
+      background-color: #244d45;
+      color: var(--mushroom-glow);
+      padding: 10px 16px;
+      border: 2px solid var(--mushroom-glow);
+      text-decoration: none;
+      box-shadow: 2px 2px #000;
+      margin-top: 1rem;
+    }
+
+    .pixel-button:hover {
+      background-color: var(--mushroom-glow);
+      color: #081f1d;
     }
 
     footer {
       margin-top: 4rem;
       text-align: center;
+      font-size: 0.5rem;
+      color: #9be3c4;
+      background-color: rgba(8, 31, 29, 0.85);
       padding: 2rem;
-      font-size: 0.6rem;
-      color: #cfcfcf;
-      background-color: #3e1e0e;
-      border-top: 4px solid var(--accent);
-    }
-
-    /* Optional pixel button */
-    .pixel-button {
-      display: inline-block;
-      background-color: #6e2f14;
-      color: var(--highlight);
-      padding: 10px 18px;
-      border: 3px solid var(--accent);
-      text-decoration: none;
-      margin-top: 1.5rem;
-      box-shadow: 3px 3px #2b0e02;
-    }
-
-    .pixel-button:hover {
-      background-color: var(--accent);
-      color: #2b0e02;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      border-top: 3px solid var(--mushroom-glow);
     }
   </style>
-  <script>
-    const titleFrames = ["About | Spencer Dewbury", "About ✨ Spencer Dewbury"];
-    let current = 0;
-    setInterval(() => {
-      document.title = titleFrames[current % titleFrames.length];
-      current++;
-    }, 1000);
-  </script>
 </head>
 <body>
 
   <header>
-    <div><strong>Spencer Dewbury</strong></div>
+    <strong>Spencer Dewbury</strong>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html" class="active">About</a>
@@ -132,8 +118,8 @@
 
   <div class="container">
     <h1>About Me</h1>
-    <p>I'm a freelance journalist focused on music, celebrity culture, and local news stories that matter. Whether I’m covering community events, interviewing artists, or writing long-form features, my aim is to highlight nuance, honesty, and voice.</p>
-    <p>I’ve contributed to a range of publications and enjoy blending structured reporting with a personal, grounded style. When I’m not writing, you can find me people-watching, listening to vinyl, or getting lost in research rabbit holes.</p>
+    <p>I’m a journalist writing at the intersection of music, pop culture, and people. When I’m not interviewing artists or covering local stories, I’m chasing down the little things that make voices feel human.</p>
+    <p>Every story has a pulse — I just follow it.</p>
     <a href="portfolio.html" class="pixel-button">SEE MY WORK</a>
   </div>
 
