@@ -74,7 +74,7 @@
             color: #F8E2B2;
             max-width: 700px;
             padding: 0 10px;
-            margin-bottom: 15px; /* REDUCED from 30px: Brings 'Explore' button closer to bio text */
+            margin-bottom: 5px; /* REDUCED SIGNIFICANTLY: Brings buttons very close to bio text */
             text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
         }
 
@@ -83,9 +83,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px; /* REDUCED from 30px: Brings button rows much closer together */
-            margin-top: 0;
-            margin-bottom: 40px;
+            gap: 5px; /* REDUCED SIGNIFICANTLY: Brings button rows very close to each other */
+            margin-top: 0; /* Ensures no extra space here */
+            margin-bottom: 40px; /* Space from footer */
         }
 
         .main-button-row,
@@ -93,14 +93,14 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 40px; /* Space between buttons in the same row, remains high */
+            gap: 20px; /* REDUCED from 40px: Brings horizontal buttons closer */
         }
 
         /* Styling for your Button PNGs */
         .button-img {
-            width: auto;
-            height: 280px; /* INCREASED SIGNIFICANTLY from 250px */
-            max-width: 800px; /* INCREASED SIGNIFICANTLY from 700px */
+            width: auto; /* Let image maintain aspect ratio */
+            height: 300px; /* INCREASED from 280px - make them EVEN HUGER */
+            max-width: 800px; /* INCREASED from 700px - allows for wider buttons */
             transition: transform 0.1s ease-out;
         }
 
@@ -148,18 +148,18 @@
             .bio-text {
                 font-size: 0.85rem;
                 max-width: 90%;
-                margin-bottom: 15px; /* Adjusted for smaller screens */
+                margin-bottom: 10px; /* Adjusted for smaller screens */
             }
             .buttons-stack {
-                gap: 10px; /* Adjusted vertical gap on mobile */
-                margin-bottom: 30px;
+                gap: 5px; /* Adjust vertical gap on mobile */
+                margin-bottom: 20px; /* Adjust margin on mobile */
             }
             .main-button-row,
             .sub-button-row {
-                gap: 20px;
+                gap: 15px; /* Adjust horizontal gap on mobile */
             }
             .button-img {
-                height: 200px; /* INCREASED from 180px for mobile */
+                height: 220px; /* INCREASED from 200px for mobile */
                 max-width: 95%;
             }
         }
