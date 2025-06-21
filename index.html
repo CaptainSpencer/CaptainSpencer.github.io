@@ -1,158 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spencer Dewbury | Home</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Lato&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spencer Dewbury | Home</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Lato&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset and Body Setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* Ensure existing PNGs maintain pixelated look when scaled */
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
 
-    body {
-      background-color: #0d1b2a;
-      background-image: url('pixel_banner.png'), url('https://www.transparenttextures.com/patterns/stardust.png');
-      background-size: cover, 200px 200px;
-      background-repeat: no-repeat, repeat;
-      background-attachment: fixed;
-      font-family: 'Lato', sans-serif;
-      color: #f5f0e6;
-    }
+        body {
+            background-color: #0d1b2a; /* Your existing background color */
+            background-image: url('pixel_banner.png'), url('https://www.transparenttextures.com/patterns/stardust.png');
+            background-size: cover, 200px 200px; /* pixel_banner covers, stardust repeats */
+            background-repeat: no-repeat, repeat;
+            background-attachment: fixed; /* Keep background fixed */
+            font-family: 'Lato', sans-serif; /* Keep Lato for general text if preferred, or change to Press Start 2P */
+            color: #f5f0e6; /* Base text color */
 
-    .content {
-      max-width: 680px;
-      /* Reduced top/bottom margin for more conciseness */
-      margin: 30px auto; /* Changed from 40px auto */
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+            /* Flexbox for centering content on the page */
+            display: flex;
+            flex-direction: column; /* Allows content to stack and footer to be at the bottom */
+            justify-content: center; /* Vertically center the main content */
+            align-items: center; /* Horizontally center the main content */
+            min-height: 100vh; /* Make body at least full viewport height */
+            overflow: hidden; /* Prevent scrollbars from background */
+        }
 
-    .title {
-      width: 100%;
-      max-width: 420px;
-      height: auto;
-      /* Reduced margin-bottom */
-      margin-bottom: 8px; /* Changed from 12px */
-    }
+        /* Main Content Area */
+        .content {
+            max-width: 800px; /* Adjust max-width based on your new desired layout */
+            width: 90%;
+            margin: auto; /* Vertically center, horizontally keeps auto for flex */
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items within the content div */
+            justify-content: center; /* Center content vertically within its available space */
+            flex-grow: 1; /* Allows content to take up available space, pushing footer down */
+        }
 
-    .subheader {
-      font-family: 'Press Start 2P', cursive;
-      /* Slightly smaller font for conciseness */
-      font-size: 0.75rem; /* Changed from 0.8rem */
-      color: #a37b52;
-      /* Reduced margin-bottom */
-      margin-bottom: 4px; /* Changed from 6px */
-    }
+        /* Your Existing Title PNG */
+        .main-title-img {
+            width: 100%;
+            max-width: 500px; /* Adjust based on the actual size and desired display of your PNG */
+            height: auto;
+            margin-bottom: 20px; /* Space below the title image */
+            /* filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.5)); */ /* Consider this for pixelated shadow on image */
+        }
 
-    .bio-text {
-      /* Slightly smaller font for conciseness */
-      font-size: 0.9rem; /* Changed from 0.95rem */
-      /* Slightly tighter line height */
-      line-height: 1.4; /* Changed from 1.5 */
-      /* Reduced margin-bottom */
-      margin-bottom: 12px; /* Changed from 16px */
-      /* Made text block slightly more compact */
-      max-width: 500px; /* Changed from 560px */
-      padding: 0 10px;
-    }
+        /* New Subtitle Text Styling */
+        .new-subheader-text {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1rem; /* Adjust size as needed */
+            color: #F8E2B2; /* Lighter gold/cream color from previous mockup */
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.3); /* Subtle pixel shadow */
+            margin-bottom: 30px; /* Space below subtitle */
+        }
 
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      /* Reduced gap between main buttons */
-      gap: 6px; /* Changed from 8px */
-      /* Reduced margin-bottom */
-      margin-bottom: 18px; /* Changed from 24px */
-    }
+        /* Bio Text Styling */
+        .bio-text {
+            font-size: 0.95rem; /* Your original size, adjust if needed */
+            line-height: 1.6; /* Good readability */
+            color: #F8E2B2; /* Match subtitle color for consistency */
+            max-width: 700px; /* Allow bio text to be wider */
+            padding: 0 10px;
+            margin-bottom: 50px; /* Space before buttons */
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.2); /* Lighter shadow for readability */
+        }
 
-    .sub-buttons {
-      display: flex;
-      /* Reduced gap between sub-buttons */
-      gap: 6px; /* Changed from 8px */
-      /* Added a small top margin to separate from the main button slightly */
-      margin-top: 4px; /* New line added */
-    }
+        /* Horizontal Buttons Container */
+        .buttons-horizontal {
+            display: flex;
+            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+            justify-content: center; /* Center the buttons horizontally */
+            gap: 20px; /* Space between the button images */
+            margin-top: 20px; /* Space from bio text */
+        }
 
-    footer {
-      text-align: center;
-      /* Slightly smaller font for conciseness */
-      font-size: 0.7rem; /* Changed from 0.75rem */
-      font-family: 'Press Start 2P', cursive;
-      color: #aaa;
-      /* Reduced top margin, now closer to content */
-      margin-top: 30px; /* Changed from 60px */
-      /* Reduced padding-bottom */
-      padding-bottom: 10px; /* Changed from 16px */
-    }
+        /* Styling for your Button PNGs */
+        .button-img {
+            width: auto; /* Let image maintain aspect ratio */
+            height: 60px; /* Adjust fixed height for consistent button size */
+            max-width: 250px; /* Maximum width to prevent over-stretching */
+            transition: transform 0.1s ease-out; /* Subtle animation on hover */
+            /* filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.5)); */ /* Optional shadow for buttons */
+        }
 
-    .sparkle {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: radial-gradient(circle, #f2d18c 0%, #a37b52 60%, transparent 100%);
-      border-radius: 50%;
-      box-shadow: 0 0 6px #a37b52aa;
-      animation: sparkle 5s linear infinite;
-      z-index: 0;
-    }
+        .button-img:hover {
+            transform: translateY(-3px); /* Lift effect on hover */
+        }
 
-    @keyframes sparkle {
-      0% { opacity: 0.1; transform: translateY(0) scale(1); }
-      50% { opacity: 1; transform: translateY(-20px) scale(1.3); }
-      100% { opacity: 0.1; transform: translateY(0) scale(1); }
-    }
-  </style>
-  <script>
-    const titleFrames = ["Spencer Dewbury | Home", "✨ Spencer Dewbury ✨"];
-    let current = 0;
-    setInterval(() => {
-      document.title = titleFrames[current % titleFrames.length];
-      current++;
-    }, 1000);
-  </script>
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            font-family: 'Press Start 2P', cursive;
+            color: #aaa;
+            margin-top: auto; /* Pushes footer to the bottom */
+            padding: 10px 0;
+            width: 100%; /* Ensure footer spans full width */
+        }
+
+        /* Sparkle Animations (retained from your original code, simplified for initial focus) */
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, #f2d18c 0%, #a37b52 60%, transparent 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 6px #a37b52aa;
+            animation: sparkle 5s linear infinite;
+            z-index: 0; /* Keep behind content */
+        }
+
+        @keyframes sparkle {
+            0% { opacity: 0.1; transform: translateY(0) scale(1); }
+            50% { opacity: 1; transform: translateY(-20px) scale(1.3); }
+            100% { opacity: 0.1; transform: translateY(0) scale(1); }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .main-title-img {
+                max-width: 90%; /* Allow title image to take more width on small screens */
+            }
+            .new-subheader-text {
+                font-size: 0.8rem;
+            }
+            .bio-text {
+                font-size: 0.85rem;
+                max-width: 90%;
+            }
+            .buttons-horizontal {
+                flex-direction: column; /* Stack buttons vertically on small screens */
+                gap: 15px; /* Adjust gap when stacked */
+            }
+            .button-img {
+                height: 50px; /* Smaller button height on mobile */
+                max-width: 90%; /* Ensure buttons don't overflow */
+            }
+        }
+    </style>
+    <script>
+        // Your existing title animation script
+        const titleFrames = ["Spencer Dewbury | Home", "✨ Spencer Dewbury ✨"];
+        let current = 0;
+        setInterval(() => {
+            document.title = titleFrames[current % titleFrames.length];
+            current++;
+        }, 1000);
+    </script>
 </head>
 <body>
-    <div class="sparkle" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
-  <div class="sparkle" style="top: 30%; left: 60%; animation-delay: 1.5s;"></div>
-  <div class="sparkle" style="top: 50%; left: 25%; animation-delay: 2.8s;"></div>
-  <div class="sparkle" style="top: 70%; left: 80%; animation-delay: 3.2s;"></div>
-  <div class="sparkle" style="top: 85%; left: 40%; animation-delay: 4.5s;"></div>
+    <div class="sparkle" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
+    <div class="sparkle" style="top: 30%; left: 60%; animation-delay: 1.5s;"></div>
+    <div class="sparkle" style="top: 50%; left: 25%; animation-delay: 2.8s;"></div>
+    <div class="sparkle" style="top: 70%; left: 80%; animation-delay: 3.2s;"></div>
+    <div class="sparkle" style="top: 85%; left: 40%; animation-delay: 4.5s;"></div>
 
-  <main class="content">
-    <img class="title" src="spencer_dewbury_title_transparent.png" alt="Spencer Dewbury">
-    <p class="subheader">Journalist with a focus on music journalism, news, and celebrity interviews.</p>
-    <p class="bio-text">
-      I'm Spencer Dewbury: Published journalist with a pulse on music journalism, local news coverage, and conversations with the voices shaping culture.
-    </p>
+    <main class="content">
+        <img class="main-title-img" src="spencer_dewbury_title_transparent.png" alt="Spencer Dewbury">
 
-    <div class="buttons">
-      <a href="portfolio.html">
-        <img src="explore_button.png" alt="Explore My Work" style="width: 240px; height: auto;" />
-      </a>
-      <div class="sub-buttons">
-        <a href="about.html">
-          <img src="about_button.png" alt="About Me" style="width: 220px; height: auto;" />
-        </a>
-        <a href="contact.html">
-          <img src="contact_button.png" alt="Contact" style="width: 220px; height: auto;" />
-        </a>
-      </div>
-    </div>
-  </main>
+        <p class="new-subheader-text">Journalist. Music Writer. Observer of Worlds.</p>
 
-  <div class="sparkle" style="top: 14%; left: 45%; width: 12px; height: 12px; animation-delay: 0.2s;"></div>
-  <div class="sparkle" style="top: 15%; left: 52%; width: 14px; height: 14px; animation-delay: 1.1s;"></div>
-  <div class="sparkle" style="top: 12%; left: 50%; width: 10px; height: 10px; animation-delay: 2s;"></div>
+        <p class="bio-text">
+            I'm Spencer Dewbury: Published journalist with a pulse on music journalism, local news coverage, and conversations with the voices shaping culture.
+        </p>
 
-  <footer>
-    &copy; 2025 Spencer Dewbury — All rights reserved.
-  </footer>
+        <div class="buttons-horizontal">
+            <a href="portfolio.html">
+                <img src="explore_button.png" alt="Explore My Work" class="button-img" />
+            </a>
+            <a href="about.html">
+                <img src="about_button.png" alt="About Me" class="button-img" />
+            </a>
+            <a href="contact.html">
+                <img src="contact_button.png" alt="Contact" class="button-img" />
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 Spencer Dewbury — All rights reserved.
+    </footer>
 </body>
 </html>
