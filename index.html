@@ -43,14 +43,12 @@
         .content {
             max-width: 800px; /* Adjust max-width based on your new desired layout */
             width: 90%;
-            /* Removed margin: auto; here as body flex handles centering */
             text-align: center;
             padding: 0 20px; /* Adjusted padding - removed top/bottom, kept left/right */
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
             align-items: center; /* Center items within the content div */
-            /* No justify-content here, elements will stack based on their own margins */
             flex-grow: 0; /* Changed from 1 - prevents content from aggressively stretching */
         }
 
@@ -82,26 +80,34 @@
             text-shadow: 1px 1px 0px rgba(0,0,0,0.2); /* Lighter shadow for readability */
         }
 
-        /* Horizontal Buttons Container */
-        .buttons-horizontal {
+        /* Button Containers */
+        .buttons-stack {
             display: flex;
-            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-            justify-content: center; /* Center the buttons horizontally */
-            gap: 20px; /* Space between the button images */
+            flex-direction: column; /* Stack the button rows vertically */
+            align-items: center; /* Center the button rows */
+            gap: 15px; /* Space between the stacked button rows */
             margin-top: 0; /* Removed explicit margin-top as bio-text margin handles spacing */
+        }
+
+        .main-button-row,
+        .sub-button-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allow buttons to wrap within their row */
+            gap: 20px; /* Space between buttons in the same row */
         }
 
         /* Styling for your Button PNGs */
         .button-img {
             width: auto; /* Let image maintain aspect ratio */
-            height: 120px; /* SIGNIFICANTLY INCREASED from 90px */
-            max-width: 450px; /* SIGNIFICANTLY INCREASED from 350px - allows for wider buttons */
+            height: 150px; /* SIGNIFICANTLY INCREASED from 120px */
+            max-width: 500px; /* SIGNIFICANTLY INCREASED from 450px */
             transition: transform 0.1s ease-out; /* Subtle animation on hover */
             /* filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.5)); */ /* Optional shadow for buttons */
         }
 
         .button-img:hover {
-            transform: translateY(-3px); /* Lift effect on hover */
+            transform: translateY(-5px); /* Slightly more lift on hover for bigger buttons */
         }
 
         /* Footer Styling */
@@ -110,7 +116,6 @@
             font-size: 0.7rem;
             font-family: 'Press Start 2P', cursive;
             color: #aaa;
-            /* Removed margin-top: auto; - body padding will give space */
             padding: 10px 0;
             width: 100%;
         }
@@ -136,24 +141,23 @@
         /* Responsive Adjustments */
         @media (max-width: 768px) {
             .main-title-img {
-                max-width: 90%; /* Allow title image to take more width on small screens */
+                max-width: 90%;
             }
             .new-subheader-text {
                 font-size: 0.8rem;
-                margin-bottom: 10px; /* Adjusted for smaller screens */
+                margin-bottom: 10px;
             }
             .bio-text {
                 font-size: 0.85rem;
                 max-width: 90%;
-                margin-bottom: 20px; /* Adjusted for smaller screens */
+                margin-bottom: 20px;
             }
-            .buttons-horizontal {
-                flex-direction: column; /* Stack buttons vertically on small screens */
-                gap: 15px; /* Adjust gap when stacked */
+            .buttons-stack {
+                gap: 10px; /* Slightly less gap on mobile */
             }
             .button-img {
-                height: 90px; /* INCREASED from 70px - larger on mobile too */
-                max-width: 95%; /* Ensure buttons don't overflow */
+                height: 100px; /* INCREASED from 90px for mobile */
+                max-width: 95%;
             }
         }
     </style>
@@ -183,16 +187,20 @@
             I'm Spencer Dewbury: Published journalist with a pulse on music journalism, local news coverage, and conversations with the voices shaping culture.
         </p>
 
-        <div class="buttons-horizontal">
-            <a href="portfolio.html">
-                <img src="explore_button.png" alt="Explore My Work" class="button-img" />
-            </a>
-            <a href="about.html">
-                <img src="about_button.png" alt="About Me" class="button-img" />
-            </a>
-            <a href="contact.html">
-                <img src="contact_button.png" alt="Contact" class="button-img" />
-            </a>
+        <div class="buttons-stack">
+            <div class="main-button-row">
+                <a href="portfolio.html">
+                    <img src="explore_button.png" alt="Explore My Work" class="button-img" />
+                </a>
+            </div>
+            <div class="sub-button-row">
+                <a href="about.html">
+                    <img src="about_button.png" alt="About Me" class="button-img" />
+                </a>
+                <a href="contact.html">
+                    <img src="contact_button.png" alt="Contact" class="button-img" />
+                </a>
+            </div>
         </div>
     </main>
 
