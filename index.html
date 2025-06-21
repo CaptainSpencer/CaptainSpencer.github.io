@@ -77,31 +77,23 @@
 
     .explore-button-row {
       margin-top: 0;
-      margin-bottom: -10px; /* pull up tight to the buttons below */
+      margin-bottom: -12px;
     }
 
     .sub-button-row {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 8px; /* tighter than before */
-      margin-top: -20px; /* closes gap between rows */
+      gap: 8px;
+      margin-top: -20px;
     }
 
     .button-img {
       width: auto;
+      height: 300px;
+      max-width: 800px;
       transition: transform 0.1s ease-out;
       display: block;
-    }
-
-    .explore-button-img {
-      height: 340px;
-      max-width: 800px;
-    }
-
-    .sub-button-img {
-      height: 300px;
-      max-width: 380px;
     }
 
     .button-img:hover {
@@ -150,14 +142,9 @@
         margin-bottom: 0;
       }
 
-      .explore-button-img {
-        height: 280px;
+      .button-img {
+        height: 260px;
         max-width: 95%;
-      }
-
-      .sub-button-img {
-        height: 250px;
-        max-width: 90%;
       }
 
       .sub-button-row {
@@ -194,20 +181,20 @@
         I'm Spencer Dewbury: Published journalist with a pulse on music journalism, local news coverage, and conversations with the voices shaping culture.
       </p>
 
-      <!-- 🚀 Explore My Work sits right below bio -->
+      <!-- 🥇 Explore button first -->
       <div class="explore-button-row">
         <a href="portfolio.html">
-          <img src="explore_button.png" alt="Explore My Work" class="button-img explore-button-img" />
+          <img src="explore_button.png" alt="Explore My Work" class="button-img" />
         </a>
       </div>
 
-      <!-- 🧲 About and Contact locked tight underneath -->
+      <!-- ✌️ About and Contact below -->
       <div class="sub-button-row">
         <a href="about.html">
-          <img src="about_button.png" alt="About Me" class="button-img sub-button-img" />
+          <img src="about_button.png" alt="About Me" class="button-img" />
         </a>
         <a href="contact.html">
-          <img src="contact_button.png" alt="Contact" class="button-img sub-button-img" />
+          <img src="contact_button.png" alt="Contact" class="button-img" />
         </a>
       </div>
     </div>
