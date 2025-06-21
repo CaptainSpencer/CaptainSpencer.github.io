@@ -85,10 +85,30 @@
       margin-top: 1.5rem;
     }
 
+    .sprite {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+    }
+
     .sprite img {
-      width: 128px;
+      width: 256px;
       height: auto;
       image-rendering: pixelated;
+      display: block;
+    }
+
+    @media (max-width: 700px) {
+      .contact-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .sprite img {
+        width: 192px;
+        margin-top: 1.5rem;
+      }
     }
 
     p {
