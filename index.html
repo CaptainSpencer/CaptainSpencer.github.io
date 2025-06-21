@@ -12,94 +12,93 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            /* Ensure existing PNGs maintain pixelated look when scaled */
             image-rendering: pixelated;
             image-rendering: -moz-crisp-edges;
             image-rendering: crisp-edges;
         }
 
         body {
-            background-color: #0d1b2a; /* Your existing background color */
+            background-color: #0d1b2a;
             background-image: url('pixel_banner.png'), url('https://www.transparenttextures.com/patterns/stardust.png');
-            background-size: cover, 200px 200px; /* pixel_banner covers, stardust repeats */
+            background-size: cover, 200px 200px;
             background-repeat: no-repeat, repeat;
-            background-attachment: fixed; /* Keep background fixed */
-            font-family: 'Lato', sans-serif; /* Keep Lato for general text if preferred, or change to Press Start 2P */
-            color: #f5f0e6; /* Base text color */
+            background-attachment: fixed;
+            font-family: 'Lato', sans-serif;
+            color: #f5f0e6;
 
-            /* Flexbox for centering content on the page */
             display: flex;
-            flex-direction: column; /* Allows content to stack and footer to be at the bottom */
-            justify-content: center; /* Vertically center the main content */
-            align-items: center; /* Horizontally center the main content */
-            min-height: 100vh; /* Make body at least full viewport height */
-            overflow: hidden; /* Prevent scrollbars from background */
+            flex-direction: column;
+            justify-content: center; /* Keep this to center the content block */
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+
+            /* Add some overall top/bottom padding to ensure content isn't right at the edge */
+            padding: 20px 0; /* New: Added padding to body for overall spacing */
         }
 
         /* Main Content Area */
         .content {
-            max-width: 800px; /* Adjust max-width based on your new desired layout */
+            max-width: 800px;
             width: 90%;
-            margin: auto; /* Vertically center, horizontally keeps auto for flex */
+            /* Removed margin: auto; here as body flex handles centering */
             text-align: center;
-            padding: 20px;
+            padding: 0 20px; /* Adjusted padding - removed top/bottom, kept left/right */
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center items within the content div */
-            justify-content: center; /* Center content vertically within its available space */
-            flex-grow: 1; /* Allows content to take up available space, pushing footer down */
+            align-items: center;
+            /* No justify-content here, elements will stack based on their own margins */
+            flex-grow: 0; /* Changed from 1 - prevents content from aggressively stretching */
         }
 
         /* Your Existing Title PNG */
         .main-title-img {
             width: 100%;
-            max-width: 500px; /* Adjust based on the actual size and desired display of your PNG */
+            max-width: 500px;
             height: auto;
-            margin-bottom: 20px; /* Space below the title image */
-            /* filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.5)); */ /* Consider this for pixelated shadow on image */
+            margin-bottom: 5px; /* Significantly reduced from 20px */
         }
 
         /* New Subtitle Text Styling */
         .new-subheader-text {
             font-family: 'Press Start 2P', cursive;
-            font-size: 1rem; /* Adjust size as needed */
-            color: #F8E2B2; /* Lighter gold/cream color from previous mockup */
-            text-shadow: 2px 2px 0px rgba(0,0,0,0.3); /* Subtle pixel shadow */
-            margin-bottom: 30px; /* Space below subtitle */
+            font-size: 1rem;
+            color: #F8E2B2;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+            margin-bottom: 15px; /* Reduced from 30px */
         }
 
         /* Bio Text Styling */
         .bio-text {
-            font-size: 0.95rem; /* Your original size, adjust if needed */
-            line-height: 1.6; /* Good readability */
-            color: #F8E2B2; /* Match subtitle color for consistency */
-            max-width: 700px; /* Allow bio text to be wider */
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #F8E2B2;
+            max-width: 700px;
             padding: 0 10px;
-            margin-bottom: 50px; /* Space before buttons */
-            text-shadow: 1px 1px 0px rgba(0,0,0,0.2); /* Lighter shadow for readability */
+            margin-bottom: 30px; /* Reduced from 50px */
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
         }
 
         /* Horizontal Buttons Container */
         .buttons-horizontal {
             display: flex;
-            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-            justify-content: center; /* Center the buttons horizontally */
-            gap: 20px; /* Space between the button images */
-            margin-top: 20px; /* Space from bio text */
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 0; /* Removed explicit margin-top as bio-text margin handles spacing */
         }
 
         /* Styling for your Button PNGs */
         .button-img {
-            width: auto; /* Let image maintain aspect ratio */
-            height: 60px; /* Adjust fixed height for consistent button size */
-            max-width: 250px; /* Maximum width to prevent over-stretching */
-            transition: transform 0.1s ease-out; /* Subtle animation on hover */
-            /* filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.5)); */ /* Optional shadow for buttons */
+            width: auto;
+            height: 60px;
+            max-width: 250px;
+            transition: transform 0.1s ease-out;
         }
 
         .button-img:hover {
-            transform: translateY(-3px); /* Lift effect on hover */
+            transform: translateY(-3px);
         }
 
         /* Footer Styling */
@@ -108,12 +107,12 @@
             font-size: 0.7rem;
             font-family: 'Press Start 2P', cursive;
             color: #aaa;
-            margin-top: auto; /* Pushes footer to the bottom */
+            /* Removed margin-top: auto; - body padding will give space */
             padding: 10px 0;
-            width: 100%; /* Ensure footer spans full width */
+            width: 100%;
         }
 
-        /* Sparkle Animations (retained from your original code, simplified for initial focus) */
+        /* Sparkle Animations (retained and re-positioned for visual balance) */
         .sparkle {
             position: absolute;
             width: 10px;
@@ -122,7 +121,7 @@
             border-radius: 50%;
             box-shadow: 0 0 6px #a37b52aa;
             animation: sparkle 5s linear infinite;
-            z-index: 0; /* Keep behind content */
+            z-index: 0;
         }
 
         @keyframes sparkle {
@@ -134,27 +133,29 @@
         /* Responsive Adjustments */
         @media (max-width: 768px) {
             .main-title-img {
-                max-width: 90%; /* Allow title image to take more width on small screens */
+                max-width: 90%;
+                margin-bottom: 10px; /* Adjusted for smaller screens */
             }
             .new-subheader-text {
                 font-size: 0.8rem;
+                margin-bottom: 10px; /* Adjusted for smaller screens */
             }
             .bio-text {
                 font-size: 0.85rem;
                 max-width: 90%;
+                margin-bottom: 20px; /* Adjusted for smaller screens */
             }
             .buttons-horizontal {
-                flex-direction: column; /* Stack buttons vertically on small screens */
-                gap: 15px; /* Adjust gap when stacked */
+                flex-direction: column;
+                gap: 15px;
             }
             .button-img {
-                height: 50px; /* Smaller button height on mobile */
-                max-width: 90%; /* Ensure buttons don't overflow */
+                height: 50px;
+                max-width: 90%;
             }
         }
     </style>
     <script>
-        // Your existing title animation script
         const titleFrames = ["Spencer Dewbury | Home", "✨ Spencer Dewbury ✨"];
         let current = 0;
         setInterval(() => {
@@ -172,13 +173,10 @@
 
     <main class="content">
         <img class="main-title-img" src="spencer_dewbury_title_transparent.png" alt="Spencer Dewbury">
-
         <p class="new-subheader-text">Journalist. Music Writer. Observer of Worlds.</p>
-
         <p class="bio-text">
             I'm Spencer Dewbury: Published journalist with a pulse on music journalism, local news coverage, and conversations with the voices shaping culture.
         </p>
-
         <div class="buttons-horizontal">
             <a href="portfolio.html">
                 <img src="explore_button.png" alt="Explore My Work" class="button-img" />
