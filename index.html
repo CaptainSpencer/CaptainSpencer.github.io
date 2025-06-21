@@ -60,34 +60,45 @@
     header {
       font-family: var(--font-pixel);
       text-align: center;
-      padding-top: 4vh;
-      padding-bottom: 1rem;
+      padding-top: 3vh;
+      padding-bottom: 0.5rem;
+    }
+
+    header img {
+      max-width: 480px;
+      height: auto;
+      margin-bottom: 0.3rem;
     }
 
     header p {
       font-size: 1rem;
       color: var(--accent);
       letter-spacing: 1px;
+      margin: 0.2rem 0;
     }
 
-    .buttons {
-      text-align: center;
-      margin-top: 1rem;
+    .bio-text {
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: var(--font-sans);
     }
 
     .button-column {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.75rem;
       margin-top: 1rem;
     }
 
     .sub-buttons {
       display: flex;
       justify-content: center;
-      gap: 1.25rem;
-      margin-top: 1rem;
+      gap: 1rem;
+      margin-top: 0.5rem;
     }
 
     footer {
@@ -122,9 +133,9 @@
   <div class="sparkle" style="top: 85%; left: 40%; animation-delay: 4.5s;"></div>
 
   <header>
-    <img src="spencer_dewbury_title_transparent.png" alt="Spencer Dewbury" style="max-width: 500px; height: auto; margin-bottom: 0.5rem;" />
+    <img src="spencer_dewbury_title_transparent.png" alt="Spencer Dewbury" />
     <p>Journalist with a focus on music journalism, news, and celebrity interviews.</p>
-    <p style="margin-top: 0.25rem; max-width: 600px; margin-left: auto; margin-right: auto; font-family: var(--font-sans);">
+    <p class="bio-text">
       I'm Spencer Dewbury: Published journalist with a pulse on music journalism, local news coverage, and conversations with the voices shaping culture.
     </p>
 
