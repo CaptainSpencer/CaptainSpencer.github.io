@@ -45,13 +45,15 @@
     }
 
     .buttons {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
+      text-align: center;
       margin-top: 1rem;
+    }
+
+    .sub-buttons {
+      display: flex;
+      justify-content: center;
       gap: 1.5rem;
-      flex-wrap: wrap;
+      margin-top: 1rem;
     }
 
     footer {
@@ -91,12 +93,14 @@
       <a href="portfolio.html">
         <img src="explore_button.png" alt="Explore My Work" style="width: 240px; height: auto;" />
       </a>
-      <a href="about.html">
-        <img src="about_button.png" alt="About Me" style="max-width: 240px; height: auto;" />
-      </a>
-      <a href="contact.html">
-        <img src="contact_button.png" alt="Contact" style="max-width: 240px; height: auto;" />
-      </a>
+      <div class="sub-buttons">
+        <a href="about.html">
+          <img src="about_button.png" alt="About Me" style="max-width: 240px; height: auto;" />
+        </a>
+        <a href="contact.html">
+          <img src="contact_button.png" alt="Contact" style="max-width: 240px; height: auto;" />
+        </a>
+      </div>
     </div>
   </header>
 
